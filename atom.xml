@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[3rogue]]></title>
+  <subtitle><![CDATA[an unsuccessful rogue]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://3rogue.github.io//"/>
+  <updated>2016-12-09T03:31:40.374Z</updated>
+  <id>http://3rogue.github.io//</id>
+  
+  <author>
+    <name><![CDATA[3rogue]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[尝试用Telegram替代Pushbullet]]></title>
+    <link href="http://3rogue.github.io/2016/12/08/Telegram2Pushbullet/"/>
+    <id>http://3rogue.github.io/2016/12/08/Telegram2Pushbullet/</id>
+    <published>2016-12-07T16:00:00.000Z</published>
+    <updated>2016-12-09T03:31:40.374Z</updated>
+    <content type="html"><![CDATA[<h2 id="连接手机和电脑的Pushbullet">连接手机和电脑的Pushbullet</h2><p><a href="https://play.google.com/store/apps/details?id=com.pushbullet.android&amp;referrer=utm_source%3Dpushbullet.com" target="_blank" rel="external">Pushbullet</a> 能做的事：</p>
+<ul>
+<li>手机和电脑互传网页（手机到电脑甚至是自动打开标签）、图片。当然小文件也可以考虑，但毕竟是通过亚马逊云服务中转的，所以大文件更推荐使用usb连接或者其他局域网传输工具。</li>
+<li>电脑管理和回复短信。这里的短信支持了许多第三方：WhatsApp, Telegram, Hangouts, Facebook Messenger, Allo and Line 然而微信是不可能的orz。</li>
+<li>电脑查看、管理手机的通知栏信息。现在你不用打开你的手机，也不会错过任何消息了。</li>
+<li>剪贴板同步。电脑、手机任意一端的剪贴板即可覆盖到另一端，相当实用的功能，然而pro版才有。</li>
+<li>ifttt支持。瞬间多了无数种用法，任何你想要第一时间获取的信息利用iftt都可以实现。明天下雨了、rss更新了、twitter更新了，你都不会错过。</li>
+</ul>
+<a id="more"></a>
+<p>不得不说Pushbullet非常的优秀，为什么要找替代品呢？Pushbullet之前免费，然而之后出现的pro版收费是39.99美元一年，不得不说还是略贵的。当然大部分功能仍然是免费的，<a href="https://www.pushbullet.com/pro" target="_blank" rel="external">收费</a> 的项目值得介意的就是剪贴板同步和通知栏管理（查看依旧可以）功能了。可是今年Pushbullet一整年都没有什么实质性更新，团队也很小，感受不到推出pro后的诚意。加上推送使用的gcm服务国内实在不稳定，电脑到手机的信息总是要打开app才行。</p>
+<h2 id="支持ifttt的Telegram">支持ifttt的Telegram</h2><p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 最近支持ifttt了，玩法立刻变得丰富多彩了。不再局限于一个聊天工具，我想这就是开放的好处吧。</p>
+<p>所以说Pushbullet利用ifttt能做的任何事，Telegram也可以。同时利用<a href="https://chrome.google.com/webstore/detail/ckkfnchnfmgpiejgaacmbngkcjbaaipd?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Chrome插件</a>我们也连接了手机和电脑端。</p>
+<p>然而不得不说的是还是有一定的局限性的：</p>
+<ul>
+<li>手机发送到电脑端的网页并不是自动打开的，插件实现更多的还是单向的电脑到手机，仍然需要打开Telegram的<a href="https://desktop.telegram.org/" target="_blank" rel="external">pc版</a>、<a href="https://web.telegram.org/" target="_blank" rel="external">网页版</a>、或者<a href="https://chrome.google.com/webstore/detail/telegram/clhhggbfdinjmjhajaheehoeibfljjno?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Chrome应用</a>，当然并不是很麻烦。</li>
+<li>仅实现了Pushbullet的功能1和5。</li>
+</ul>
+<p>对我个人来说，短信实在用的不多，查看和管理通知栏确实很有用，然而手机一般都习惯性放在办公桌面上了。所以我更在乎的是功能的稳定性，在Telegram上我看到了更多可能，毕竟有开源社区的力量是无限的。</p>
+<p>最后给个福利，在Telegram利用ifttt建了个09优酷视频的<a href="https://telegram.me/ftd_2009" target="_blank" rel="external">channel</a> ,欢迎关注。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="连接手机和电脑的Pushbullet">连接手机和电脑的Pushbullet</h2><p><a href="https://play.google.com/store/apps/details?id=com.pushbullet.android&amp;referrer=utm_source%3Dpushbullet.com">Pushbullet</a> 能做的事：</p>
+<ul>
+<li>手机和电脑互传网页（手机到电脑甚至是自动打开标签）、图片。当然小文件也可以考虑，但毕竟是通过亚马逊云服务中转的，所以大文件更推荐使用usb连接或者其他局域网传输工具。</li>
+<li>电脑管理和回复短信。这里的短信支持了许多第三方：WhatsApp, Telegram, Hangouts, Facebook Messenger, Allo and Line 然而微信是不可能的orz。</li>
+<li>电脑查看、管理手机的通知栏信息。现在你不用打开你的手机，也不会错过任何消息了。</li>
+<li>剪贴板同步。电脑、手机任意一端的剪贴板即可覆盖到另一端，相当实用的功能，然而pro版才有。</li>
+<li>ifttt支持。瞬间多了无数种用法，任何你想要第一时间获取的信息利用iftt都可以实现。明天下雨了、rss更新了、twitter更新了，你都不会错过。</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Pushbullet" scheme="http://3rogue.github.io/tags/Pushbullet/"/>
+    
+      <category term="Telegram" scheme="http://3rogue.github.io/tags/Telegram/"/>
+    
+      <category term="sth" scheme="http://3rogue.github.io/categories/sth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[图像测试]]></title>
+    <link href="http://3rogue.github.io/2016/06/21/test-images/"/>
+    <id>http://3rogue.github.io/2016/06/21/test-images/</id>
+    <published>2016-06-20T16:00:00.000Z</published>
+    <updated>2016-12-09T11:19:26.632Z</updated>
+    <content type="html"><![CDATA[<p>看的结城友奈是勇者，学SOS姬也用ps截几个gif，这样精彩瞬间也能保留住XD<br><a id="more"></a></p>
+<img title="标题" alt="注释" src="http://o94jq7lb2.bkt.clouddn.com/images/op画面.gif">
+<img title="结城友奈" alt="结城友奈" src="http://o94jq7lb2.bkt.clouddn.com/images/结城友奈.gif">
+<img title="三好夏凛" alt="三好夏凛" src="http://o94jq7lb2.bkt.clouddn.com/images/三好夏凛.gif">
+<img title="犬吠埼树" alt="犬吠埼树" src="http://o94jq7lb2.bkt.clouddn.com/images/犬吠埼树.gif">
+<img title="犬吠埼风" alt="犬吠埼风" src="http://o94jq7lb2.bkt.clouddn.com/images/犬吠埼风.gif">
+<img title="东乡美森" alt="东乡美森" src="http://o94jq7lb2.bkt.clouddn.com/images/东乡美森.gif">
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>看的结城友奈是勇者，学SOS姬也用ps截几个gif，这样精彩瞬间也能保留住XD<br>]]>
+    
+    </summary>
+    
+      <category term="image" scheme="http://3rogue.github.io/tags/image/"/>
+    
+      <category term="test" scheme="http://3rogue.github.io/tags/test/"/>
+    
+      <category term="image" scheme="http://3rogue.github.io/categories/image/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[javfee简单爬虫]]></title>
+    <link href="http://3rogue.github.io/2015/08/09/javfee/"/>
+    <id>http://3rogue.github.io/2015/08/09/javfee/</id>
+    <published>2015-08-09T10:05:21.000Z</published>
+    <updated>2016-12-08T12:59:16.267Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>主要用到<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#" target="_blank" rel="external">requests包</a>，非常的方便。<br>爬javfee虽然low了点，不过站点很友好，不用特意设置headers。</p>
+</blockquote>
+<h2 id="单线程">单线程</h2><p>最坑的就是写文件名时候的编码问题，头疼的厉害，是时候去转python3了。<br><a id="more"></a></p>
+<script src="https://gist.github.com/3rogue/59e87c09c6779699f61b.js"></script>
+
+<h2 id="多线程">多线程</h2><p>多线程还不是很懂，写的很勉强，不过io密集型多线程优势非常的明显。比上面节省成吨的时间。</p>
+<script src="https://gist.github.com/3rogue/f86157e01b5fc0aee4e0.js"></script>
+
+<h3 id="参考资料：">参考资料：</h3><ul>
+<li><strong><a href="http://segmentfault.com/a/1190000000414339#articleHeader3" target="_blank" rel="external">一行 Python 实现并行化</a></strong></li>
+<li><a href="http://www.oschina.net/code/snippet_2359276_50088#73034" target="_blank" rel="external">Python抓妹子图+多进程</a></li>
+<li><a href="http://yangpengg.github.io/blog/2012/12/13/decode-and-encode-in-python/" target="_blank" rel="external">Decode and Encode in Python</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>主要用到<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#">requests包</a>，非常的方便。<br>爬javfee虽然low了点，不过站点很友好，不用特意设置headers。</p>
+</blockquote>
+<h2 id="单线程">单线程</h2><p>最坑的就是写文件名时候的编码问题，头疼的厉害，是时候去转python3了。<br>]]>
+    
+    </summary>
+    
+      <category term="爬虫" scheme="http://3rogue.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="python" scheme="http://3rogue.github.io/categories/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[八皇后问题学习enumerate & permutations]]></title>
+    <link href="http://3rogue.github.io/2015/08/08/python/"/>
+    <id>http://3rogue.github.io/2015/08/08/python/</id>
+    <published>2015-08-08T05:31:37.000Z</published>
+    <updated>2016-12-09T09:24:11.140Z</updated>
+    <content type="html"><![CDATA[<p>permutations 生成123…9的全排列，共9！个<br>enumerate 提取横纵坐标<br><a id="more"></a></p>
+<script src="https://gist.github.com/3rogue/9806d55d97a72649e225.js"></script>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>permutations 生成123…9的全排列，共9！个<br>enumerate 提取横纵坐标<br>]]>
+    
+    </summary>
+    
+      <category term="8queen" scheme="http://3rogue.github.io/tags/8queen/"/>
+    
+      <category term="enumerate" scheme="http://3rogue.github.io/tags/enumerate/"/>
+    
+      <category term="permutations" scheme="http://3rogue.github.io/tags/permutations/"/>
+    
+      <category term="python" scheme="http://3rogue.github.io/categories/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[换卡后的二三事]]></title>
+    <link href="http://3rogue.github.io/2015/08/08/after-change-sim/"/>
+    <id>http://3rogue.github.io/2015/08/08/after-change-sim/</id>
+    <published>2015-08-08T04:10:55.344Z</published>
+    <updated>2015-08-08T04:10:55.335Z</updated>
+    <content type="html"><![CDATA[<p>换了手机号，第一时间就想起一堆账号好像手机号码绑定的，赶紧更换手机：</p>
+<ol>
+<li><a href="http://accounts.alipay.com" target="_blank" rel="external">淘宝安全中心</a><br><a href="https://security.google.com/settings/security/signinoptions/rescuephone?utm_source=OGB/" target="_blank" rel="external">google</a> 方便<br><a href="http://aq.qq.com/" target="_blank" rel="external">腾讯</a> 腾讯真TM蛋疼，不记得密保问题只能人工申诉了，过程繁琐，页面许久没更新过的样子。<br><a href="https://passport.baidu.com/v2/accountsecurity?act=rebindmobile" target="_blank" rel="external">百度</a> </li>
+<li>各大网银（可能需要去网点办理）</li>
+<li><a href="http://security.weibo.com/security/index" target="_blank" rel="external">微博</a></li>
+<li>各大网上商城：京东（需要电话400-606-5500转7沟通）等，400电话收市话费的orz<br>6.</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>换了手机号，第一时间就想起一堆账号好像手机号码绑定的，赶紧更换手机：</p>
+<ol>
+<li><a href="http://accounts.alipay.com" target="_blank" rel="external">淘宝安全中心</a><br><a href]]>
+    </summary>
+    
+      <category term="password" scheme="http://3rogue.github.io/tags/password/"/>
+    
+      <category term="sim" scheme="http://3rogue.github.io/tags/sim/"/>
+    
+      <category term="sth" scheme="http://3rogue.github.io/categories/sth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Markdown 入门基础]]></title>
+    <link href="http://3rogue.github.io/2015/08/07/hello-world/"/>
+    <id>http://3rogue.github.io/2015/08/07/hello-world/</id>
+    <published>2015-08-06T16:00:00.000Z</published>
+    <updated>2016-11-20T14:05:57.526Z</updated>
+    <content type="html"><![CDATA[<p>利用# ## ###控制字体大小</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><p>利用 &gt; 插入引用</p>
+<blockquote>
+<p>这是一段引用文字</p>
+</blockquote>
+<a id="more"></a>
+<p>*包裹文字 斜体</p>
+<p><em>斜体</em></p>
+<p>** 包裹粗体</p>
+<p><strong>粗体</strong></p>
+<p>~~ 包裹删除线</p>
+<p><del>写错了</del></p>
+<p>粗体中包含斜体/斜体中包含粗体，用 <em> </em> 代替 * 包裹中间的文字即可</p>
+<p><em>Everyone <strong>must</strong> attend the meeting at 5 o’clock today.</em></p>
+<p>‘-‘ 或者 ‘*’制造列表</p>
+<ul>
+<li>列表1</li>
+<li>列表2</li>
+</ul>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+</ol>
+<p>用3个 ` 代码前后围绕，制造高亮，数字1左边，tab上方的按键</p>
+<p>紧跟Python等  选择好语言显示更佳</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'This is python'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">"iostream"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"This is cpp"</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Post name"</span></span><br></pre></td></tr></table></figure>
+<p>[xxx]环绕超链接文本 (xxx) 跟随填写链接地址</p>
+<p><a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="参考资料">参考资料</h3><ul>
+<li><a href="https://help.github.com/articles/markdown-basics/" target="_blank" rel="external">Markdown Basics</a></li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">GitHub Flavored Markdown</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>利用# ## ###控制字体大小</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><p>利用 &gt; 插入引用</p>
+<blockquote>
+<p>这是一段引用文字</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="Markdown" scheme="http://3rogue.github.io/tags/Markdown/"/>
+    
+      <category term="skills" scheme="http://3rogue.github.io/categories/skills/"/>
+    
+  </entry>
+  
+</feed>
