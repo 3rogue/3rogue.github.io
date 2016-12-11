@@ -1,26 +1,20 @@
-@import url("//fonts.useso.com/css?family=Lato:400,400italic");
 @font-face {
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
-  src: url("font/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("font/fontawesome-webfont.woff") format('woff'), url("font/fontawesome-webfont.ttf") format('truetype'), url("font/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
+  src: url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.woff") format('woff'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.ttf") format('truetype'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
 }
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  background: #eee;
+  background: #fff;
   color: #444;
-  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-size: 15px;
   font-weight: 500;
   text-shadow: 0 0 1px transparent;
-}
-@media screen and (max-width: 1260px) {
-  body {
-    margin: 0 30px;
-  }
 }
 @media screen and (max-width: 600px) {
   body {
@@ -34,6 +28,8 @@ h4,
 h5,
 h6 {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
 }
 h1 {
   font-size: 1.8em;
@@ -69,35 +65,35 @@ a:hover {
   clear: both;
 }
 .inner {
-  width: 1200px;
+  width: 1060px;
   margin: 0 auto;
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1060px) {
   .inner {
     width: 100%;
   }
 }
 #main-col {
-  width: 900px;
+  width: 760px;
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1060px) {
   #main-col {
     width: 100%;
     margin-right: -300px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   #main-col {
     margin-right: 0;
     float: none;
   }
 }
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1060px) {
   #wrapper {
     margin-right: 300px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   #wrapper {
     margin-right: 0;
   }
@@ -136,12 +132,9 @@ a:hover {
   margin-left: 30px;
 }
 article {
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: 1px 1px 10px #aaa;
+  box-shadow: 1px 1px 10px #aaa;
   background: #fff;
-}
-article.page {
-  padding-left: 20px;
 }
 article.page .icon {
   display: none;
@@ -163,13 +156,14 @@ article.link .title a:after {
   vertical-align: super;
 }
 article .post-content {
-  padding: 20px 20px 15px 77px;
-  margin-bottom: 50px;
+  padding: 1.5em 3em 0 69px;
+  margin-bottom: 2em;
   position: relative;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   article .post-content {
-    padding-left: 20px;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 article .gallery {
@@ -236,8 +230,8 @@ article .gallery .next:before {
   right: 10px;
 }
 article header .icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-right: 25px;
   position: absolute;
   top: 20px;
@@ -277,6 +271,7 @@ article header .title a:hover {
 article .entry {
   text-align: justify;
   line-height: 1.6;
+  margin-top: 1em;
 }
 article .entry p,
 article .entry blockquote,
@@ -290,16 +285,16 @@ article .entry h4,
 article .entry h5,
 article .entry h6,
 article .entry .video-container {
-  margin-top: 15px;
+  margin: 1em 0;
 }
 article .entry blockquote {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  font-style: italic;
   font-family: "Georgia", serif;
-  font-size: 1em;
-  padding: 0 30px 15px;
-  text-align: left;
+  padding: 0 0 0 15px;
+  margin: 1em 0;
+  border-left: 5px solid #eee;
+}
+article .entry blockquote p {
+  margin: 0;
 }
 article .entry blockquote footer {
   border-top: none;
@@ -315,7 +310,7 @@ article .entry blockquote footer cite:before {
 }
 article .entry code,
 article .entry pre {
-  font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+  font-family: Consolas, Monaco, Menlo, monospace;
 }
 article .entry code {
   background: #eee;
@@ -362,7 +357,6 @@ article .entry dl dl {
 }
 article .entry h1,
 article .entry h2 {
-  font-weight: bold;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-top: 20px;
@@ -371,7 +365,7 @@ article .entry h3,
 article .entry h4,
 article .entry h5,
 article .entry h6 {
-  font-weight: bold;
+  font-weight: normal;
 }
 article .entry img,
 article .entry video {
@@ -425,8 +419,8 @@ article .entry .pullquote {
   font-size: 1.5em;
 }
 article footer {
-  margin-top: 15px;
-  padding-top: 10px;
+  padding-bottom: 1em;
+  padding-top: 1em;
   border-top: 1px solid #ddd;
   color: #999;
   font-size: 0.9em;
@@ -482,8 +476,8 @@ article footer .addthis iframe {
 #comment {
   padding: 20px;
   background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: 1px 2px 10px #aaa;
+  box-shadow: 1px 2px 10px #aaa;
   margin-bottom: 50px;
 }
 #comment .title {
@@ -523,20 +517,14 @@ article footer .addthis iframe {
 }
 .archive-title:before {
   font-family: FontAwesome;
-  content: '\f073';
   padding-right: 15px;
 }
-.archive-title.tag:before {
-  content: '\f02b';
-}
-.archive-title.category:before {
-  content: '\f07b';
-}
 .archive {
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: 1px 2px 10px #ddd;
+  box-shadow: 1px 2px 10px #ddd;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 50px;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
 }
 .archive article {
   -webkit-box-shadow: none;
@@ -557,8 +545,9 @@ article footer .addthis iframe {
 }
 #sidebar .widget {
   background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
+  -webkit-box-shadow: -1px 1px 5px #ccc;
+  box-shadow: -1px 1px 5px #ccc;
+  border: 1px solid #ddd;
   margin-bottom: 30px;
   word-wrap: break-word;
 }
@@ -599,6 +588,8 @@ article footer .addthis iframe {
   font-size: 1em;
   padding: 10px 15px;
   border: 1px solid #ddd;
+  -webkit-box-shadow: -1px 1px 5px #ccc;
+  box-shadow: -1px 1px 5px #ccc;
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -669,7 +660,7 @@ article footer .addthis iframe {
 }
 .entry .gist .gist-file .gist-data pre {
   padding: 0 !important;
-  font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+  font-family: Consolas, Monaco, Menlo, monospace;
 }
 .entry .gist .gist-file .gist-meta {
   background: none;
