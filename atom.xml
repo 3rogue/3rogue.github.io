@@ -60,13 +60,13 @@
     <link href="http://3rogue.github.io/2016/06/21/test-images/"/>
     <id>http://3rogue.github.io/2016/06/21/test-images/</id>
     <published>2016-06-20T16:00:00.000Z</published>
-    <updated>2016-12-16T07:52:05.982Z</updated>
+    <updated>2016-12-16T07:56:28.887Z</updated>
     <content type="html"><![CDATA[<p>试一试七牛图片效果<br><a id="more"></a></p>
-<img title="hui1" alt="hui1" src="http://o94jq7lb2.bkt.clouddn.com/images/hui1.jpg?imageView2/2/w/500/q/70">
-<img title="hui2" alt="hui" src="http://o94jq7lb2.bkt.clouddn.com/images/hui2.png?imageView2/2/w/500/q/70">
-<img title="hui3" alt="hui3" src="http://o94jq7lb2.bkt.clouddn.com/images/hui3.jpg?imageView2/2/w/500/q/70">
-<img title="hui4" alt="hui4" src="http://o94jq7lb2.bkt.clouddn.com/images/hui4.png?imageView2/2/w/500/q/70">
-<img title="hui5" alt="hui5" src="http://o94jq7lb2.bkt.clouddn.com/images/hui5.png?imageView2/2/w/500/q/70">
+<img title="hui1" alt="hui1" src="http://o94jq7lb2.bkt.clouddn.com/images/hui1.jpg?imageView2/2/w/650/q/75">
+<img title="hui2" alt="hui2" src="http://o94jq7lb2.bkt.clouddn.com/images/hui2.png?imageView2/2/w/650/q/75">
+<img title="hui3" alt="hui3" src="http://o94jq7lb2.bkt.clouddn.com/images/hui3.jpg?imageView2/2/w/650/q/75">
+<img title="hui4" alt="hui4" src="http://o94jq7lb2.bkt.clouddn.com/images/hui4.png?imageView2/2/w/650/q/75">
+<img title="hui5" alt="hui5" src="http://o94jq7lb2.bkt.clouddn.com/images/hui5.png?imageView2/2/w/650/q/75">
 ]]></content>
     <summary type="html">
     <![CDATA[<p>试一试七牛图片效果<br>]]>
@@ -202,7 +202,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Post name"</span></span><br></pre></td></tr></table></figure>
 <p>[xxx]环绕超链接文本 (xxx) 跟随填写链接地址</p>
 <p><a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<p>图片插入<br><img title="小圆" alt="小圆" src="http://o94jq7lb2.bkt.clouddn.com/images/test.gif?imageView2/2/w/500/q/70"></p>
+<p>图片插入<br><img title="小圆" alt="小圆" src="http://o94jq7lb2.bkt.clouddn.com/images/test.gif?imageView2/2/w/650/q/75"></p>
 <h3 id="参考资料">参考资料</h3><ul>
 <li><a href="https://help.github.com/articles/markdown-basics/" target="_blank" rel="external">Markdown Basics</a></li>
 <li><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">GitHub Flavored Markdown</a></li>
