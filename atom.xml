@@ -4,9 +4,9 @@
   <title><![CDATA[Yeoman]]></title>
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://3rogue.github.io//"/>
+  <link href="http://3rogue.xyz//"/>
   <updated>2016-12-17T11:55:00.065Z</updated>
-  <id>http://3rogue.github.io//</id>
+  <id>http://3rogue.xyz//</id>
   
   <author>
     <name><![CDATA[Yeoman]]></name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title><![CDATA[尝试用 Telegram 来替代 Pushbullet]]></title>
-    <link href="http://3rogue.github.io/2016/12/08/Telegram2Pushbullet/"/>
-    <id>http://3rogue.github.io/2016/12/08/Telegram2Pushbullet/</id>
+    <link href="http://3rogue.xyz/2016/12/08/Telegram2Pushbullet/"/>
+    <id>http://3rogue.xyz/2016/12/08/Telegram2Pushbullet/</id>
     <published>2016-12-07T16:00:00.000Z</published>
     <updated>2016-12-17T11:55:00.065Z</updated>
     <content type="html"><![CDATA[<p>Telegram 慕名已久，不过国内微信独大，作为一个聊天工具的话没有人用就是最大的尴尬了。不过，现在你可以把它当作 Pushbllet 的替代品留在你的手机中了。</p>
@@ -48,18 +48,18 @@
     
     </summary>
     
-      <category term="Pushbullet" scheme="http://3rogue.github.io/tags/Pushbullet/"/>
+      <category term="Pushbullet" scheme="http://3rogue.xyz/tags/Pushbullet/"/>
     
-      <category term="Telegram" scheme="http://3rogue.github.io/tags/Telegram/"/>
+      <category term="Telegram" scheme="http://3rogue.xyz/tags/Telegram/"/>
     
-      <category term="sth" scheme="http://3rogue.github.io/categories/sth/"/>
+      <category term="sth" scheme="http://3rogue.xyz/categories/sth/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[图像测试]]></title>
-    <link href="http://3rogue.github.io/2016/06/21/test-images/"/>
-    <id>http://3rogue.github.io/2016/06/21/test-images/</id>
+    <link href="http://3rogue.xyz/2016/06/21/test-images/"/>
+    <id>http://3rogue.xyz/2016/06/21/test-images/</id>
     <published>2016-06-20T16:00:00.000Z</published>
     <updated>2016-12-16T07:56:28.887Z</updated>
     <content type="html"><![CDATA[<p>试一试七牛图片效果<br><a id="more"></a></p>
@@ -74,18 +74,18 @@
     
     </summary>
     
-      <category term="acg" scheme="http://3rogue.github.io/tags/acg/"/>
+      <category term="acg" scheme="http://3rogue.xyz/tags/acg/"/>
     
-      <category term="image" scheme="http://3rogue.github.io/tags/image/"/>
+      <category term="image" scheme="http://3rogue.xyz/tags/image/"/>
     
-      <category term="acg" scheme="http://3rogue.github.io/categories/acg/"/>
+      <category term="acg" scheme="http://3rogue.xyz/categories/acg/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[换卡后的二三事]]></title>
-    <link href="http://3rogue.github.io/2015/10/02/after-change-sim/"/>
-    <id>http://3rogue.github.io/2015/10/02/after-change-sim/</id>
+    <link href="http://3rogue.xyz/2015/10/02/after-change-sim/"/>
+    <id>http://3rogue.xyz/2015/10/02/after-change-sim/</id>
     <published>2015-10-01T16:00:00.000Z</published>
     <updated>2016-12-10T13:19:26.809Z</updated>
     <content type="html"><![CDATA[<p>换了手机号，第一时间就想起一堆账号好像手机号码绑定的，赶紧更换手机：</p>
@@ -105,14 +105,14 @@
     
     </summary>
     
-      <category term="life" scheme="http://3rogue.github.io/categories/life/"/>
+      <category term="life" scheme="http://3rogue.xyz/categories/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[javfee简单爬虫]]></title>
-    <link href="http://3rogue.github.io/2015/08/09/javfee/"/>
-    <id>http://3rogue.github.io/2015/08/09/javfee/</id>
+    <link href="http://3rogue.xyz/2015/08/09/javfee/"/>
+    <id>http://3rogue.xyz/2015/08/09/javfee/</id>
     <published>2015-08-08T16:00:00.000Z</published>
     <updated>2016-12-13T09:16:40.755Z</updated>
     <content type="html"><![CDATA[<blockquote>
@@ -138,16 +138,16 @@
     
     </summary>
     
-      <category term="爬虫" scheme="http://3rogue.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://3rogue.xyz/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="python" scheme="http://3rogue.github.io/categories/python/"/>
+      <category term="python" scheme="http://3rogue.xyz/categories/python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[八皇后问题学习enumerate & permutations]]></title>
-    <link href="http://3rogue.github.io/2015/08/08/8queen/"/>
-    <id>http://3rogue.github.io/2015/08/08/8queen/</id>
+    <link href="http://3rogue.xyz/2015/08/08/8queen/"/>
+    <id>http://3rogue.xyz/2015/08/08/8queen/</id>
     <published>2015-08-07T16:00:00.000Z</published>
     <updated>2016-12-10T13:24:34.507Z</updated>
     <content type="html"><![CDATA[<p>permutations 生成123…9的全排列，共9!个<br>enumerate 提取横纵坐标<br><a id="more"></a></p>
@@ -158,20 +158,20 @@
     
     </summary>
     
-      <category term="8queen" scheme="http://3rogue.github.io/tags/8queen/"/>
+      <category term="8queen" scheme="http://3rogue.xyz/tags/8queen/"/>
     
-      <category term="enumerate" scheme="http://3rogue.github.io/tags/enumerate/"/>
+      <category term="enumerate" scheme="http://3rogue.xyz/tags/enumerate/"/>
     
-      <category term="permutations" scheme="http://3rogue.github.io/tags/permutations/"/>
+      <category term="permutations" scheme="http://3rogue.xyz/tags/permutations/"/>
     
-      <category term="python" scheme="http://3rogue.github.io/categories/python/"/>
+      <category term="python" scheme="http://3rogue.xyz/categories/python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Markdown 入门基础]]></title>
-    <link href="http://3rogue.github.io/2015/08/07/hello-world/"/>
-    <id>http://3rogue.github.io/2015/08/07/hello-world/</id>
+    <link href="http://3rogue.xyz/2015/08/07/hello-world/"/>
+    <id>http://3rogue.xyz/2015/08/07/hello-world/</id>
     <published>2015-08-06T16:00:00.000Z</published>
     <updated>2016-12-17T11:50:25.304Z</updated>
     <content type="html"><![CDATA[<p>利用# ## ###控制字体大小</p>
@@ -215,9 +215,9 @@
     
     </summary>
     
-      <category term="Markdown" scheme="http://3rogue.github.io/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://3rogue.xyz/tags/Markdown/"/>
     
-      <category term="sth" scheme="http://3rogue.github.io/categories/sth/"/>
+      <category term="sth" scheme="http://3rogue.xyz/categories/sth/"/>
     
   </entry>
   
