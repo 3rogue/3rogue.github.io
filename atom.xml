@@ -61,16 +61,11 @@
     <link href="https://3rogue.xyz/2016/06/21/test-images/"/>
     <id>https://3rogue.xyz/2016/06/21/test-images/</id>
     <published>2016-06-20T16:00:00.000Z</published>
-    <updated>2016-12-16T07:56:28.887Z</updated>
-    <content type="html"><![CDATA[<p>试一试七牛图片效果<br><a id="more"></a></p>
-<img title="hui1" alt="hui1" src="http://o94jq7lb2.bkt.clouddn.com/images/hui1.jpg?imageView2/2/w/650/q/75">
-<img title="hui2" alt="hui2" src="http://o94jq7lb2.bkt.clouddn.com/images/hui2.png?imageView2/2/w/650/q/75">
-<img title="hui3" alt="hui3" src="http://o94jq7lb2.bkt.clouddn.com/images/hui3.jpg?imageView2/2/w/650/q/75">
-<img title="hui4" alt="hui4" src="http://o94jq7lb2.bkt.clouddn.com/images/hui4.png?imageView2/2/w/650/q/75">
-<img title="hui5" alt="hui5" src="http://o94jq7lb2.bkt.clouddn.com/images/hui5.png?imageView2/2/w/650/q/75">
+    <updated>2016-12-20T01:13:26.590Z</updated>
+    <content type="html"><![CDATA[<p>试一试图片效果<br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849c3d558.jpg" alt="hui3"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849e68665.jpg" alt="hui1"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849f1aaaf.png" alt="hui4"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849fa2217.png" alt="hui2"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849ff36b6.jpg" alt="hui5"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>试一试七牛图片效果<br>]]>
+    <![CDATA[<p>试一试图片效果<br>]]>
     
     </summary>
     
@@ -173,7 +168,7 @@
     <link href="https://3rogue.xyz/2015/08/07/hello-world/"/>
     <id>https://3rogue.xyz/2015/08/07/hello-world/</id>
     <published>2015-08-06T16:00:00.000Z</published>
-    <updated>2016-12-17T11:50:25.304Z</updated>
+    <updated>2016-12-20T01:11:11.814Z</updated>
     <content type="html"><![CDATA[<p>利用# ## ###控制字体大小</p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><p>利用 &gt; 插入引用<br><a id="more"></a></p>
 <blockquote>
@@ -203,7 +198,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Post name"</span></span><br></pre></td></tr></table></figure>
 <p>[xxx]环绕超链接文本 (xxx) 跟随填写链接地址</p>
 <p><a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<p>图片插入<br><img title="小圆" alt="小圆" src="http://o94jq7lb2.bkt.clouddn.com/images/test.jpg?imageView2/2/w/650/q/75"></p>
+<p>图片插入<br><img src="https://ooo.0o0.ooo/2016/12/20/5858849c0da8e.jpg" alt="小圆"></p>
 <h3 id="参考资料">参考资料</h3><ul>
 <li><a href="https://help.github.com/articles/markdown-basics/" target="_blank" rel="external">Markdown Basics</a></li>
 <li><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">GitHub Flavored Markdown</a></li>
