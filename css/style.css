@@ -2,7 +2,7 @@
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
-  src: url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.woff") format('woff'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.ttf") format('truetype'), url("http://o94jq7lb2.bkt.clouddn.com/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
+  src: url("font/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("font/fontawesome-webfont.woff") format('woff'), url("font/fontawesome-webfont.ttf") format('truetype'), url("font/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
 }
 * {
   margin: 0;
@@ -369,6 +369,9 @@ article .entry h6 {
 }
 article .entry img,
 article .entry video {
+  max-height: 600px;
+  -webkit-box-shadow: 2px 2px 3px #aaa;
+  box-shadow: 2px 2px 3px #aaa;
   max-width: 100%;
   height: auto;
   border: none;
