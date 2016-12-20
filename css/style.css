@@ -11,7 +11,7 @@
 body {
   background: #fff;
   color: #444;
-  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-shadow: 0 0 1px transparent;
@@ -38,7 +38,7 @@ h2 {
   font-size: 1.5em;
 }
 h3 {
-  font-size: 1.3em;
+  font-size: 18px;
 }
 a {
   text-decoration: none;
@@ -356,16 +356,42 @@ article .entry dl dl {
   margin-top: 0;
 }
 article .entry h1,
-article .entry h2 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-top: 20px;
-}
+article .entry h2,
 article .entry h3,
 article .entry h4,
 article .entry h5,
 article .entry h6 {
-  font-weight: normal;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+}
+article .entry h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+article .entry h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+article .entry h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+article .entry h4 {
+  font-size: 1.25em;
+}
+article .entry h5 {
+  font-size: 1em;
+}
+article .entry h6 {
+  font-size: 1em;
+  color: #777;
 }
 article .entry img,
 article .entry video {
