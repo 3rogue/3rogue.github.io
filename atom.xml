@@ -176,7 +176,7 @@
     <link href="https://3rogue.xyz/2015/08/08/8queen/"/>
     <id>https://3rogue.xyz/2015/08/08/8queen/</id>
     <published>2015-08-07T16:00:00.000Z</published>
-    <updated>2016-12-10T13:24:34.507Z</updated>
+    <updated>2016-12-20T13:42:45.192Z</updated>
     <content type="html"><![CDATA[<p>permutations 生成123…9的全排列，共9!个<br>enumerate 提取横纵坐标<br><a id="more"></a></p>
 <script src="https://gist.github.com/3rogue/9806d55d97a72649e225.js"></script>
 ]]></content>
@@ -184,12 +184,6 @@
     <![CDATA[<p>permutations 生成123…9的全排列，共9!个<br>enumerate 提取横纵坐标<br>]]>
     
     </summary>
-    
-      <category term="8queen" scheme="https://3rogue.xyz/tags/8queen/"/>
-    
-      <category term="enumerate" scheme="https://3rogue.xyz/tags/enumerate/"/>
-    
-      <category term="permutations" scheme="https://3rogue.xyz/tags/permutations/"/>
     
       <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
     
