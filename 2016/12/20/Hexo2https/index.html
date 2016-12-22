@@ -69,13 +69,14 @@
     </header>
     <div class="entry">
       
-        <p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net" target="_blank" rel="external">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a> 的免费套餐。</p>
+        <p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的。</p>
+<p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net" target="_blank" rel="external">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a> 的免费套餐。</p>
 <a id="more"></a>
 <p>注册后都是很简单的操作，扫描后把域名的 DNS 改为 CloudFlare 所提供的地址。如果扫描里没显示结果的话，自己手动加 CNAME 解析即可。稍等十几分钟后 Recheck ， Status: Active 就表示成功了。</p>
 <p>在 crypto 分类里打开 HSTS 和 之后的 <em>include subdomains</em> 以及 <em>No-sniff</em> 选项。</p>
 <p>记得修改 _config.yml 文件里的 url 为 https ，为了保证始终 https 连接，可以在主题的 head 标签下加入强制跳转：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"canonical"</span> href=<span class="string">"&lt;%= config.url %&gt;"</span> /&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</span><br><span class="line">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span><br><span class="line">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>操作完成后需要大概<strong>12小时</strong>左右生效，所以不要着急，第二天看看结果。生效后检查下网站是不是还有非 https 的资源引用，去  <a href="https://www.ssllabs.com/" target="_blank" rel="external">SSLLAB</a> 评下分。</p>
+<p>操作完成后需要大概<strong>12小时</strong>左右生效，所以不要着急，第二天看看结果。生效后检查下网站是不是还有非 https 的资源引用，去  <a href="https://www.ssllabs.com/ssltest" target="_blank" rel="external">SSLLAB</a> 评下分。</p>
 <h3 id="参考资料">参考资料</h3><ul>
 <li><a href="https://zaicheng.me/2016/01/02/hexo-blog-with-custom-domain-and-cloudflare/" target="_blank" rel="external">Hexo blog with custom domain and cloudflare</a></li>
 <li><a href="https://g2ex.github.io/2015/10/14/Hexo-with-SSL-Hosted-on-Github-Page/" target="_blank" rel="external">为Github的Hexo博客启用SSL/TLS</a></li>

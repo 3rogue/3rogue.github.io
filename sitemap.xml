@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://3rogue.xyz/2016/12/20/Hexo2https/</loc>
+    <lastmod>2016-12-22T11:32:48.425Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://3rogue.xyz/about/index.html</loc>
     <lastmod>2016-12-20T13:56:29.744Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>https://3rogue.xyz/2015/08/08/8queen/</loc>
     <lastmod>2016-12-20T13:42:45.192Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://3rogue.xyz/2016/12/20/Hexo2https/</loc>
-    <lastmod>2016-12-20T13:40:13.688Z</lastmod>
   </url>
   
   <url>
