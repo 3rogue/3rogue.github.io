@@ -5,7 +5,7 @@
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://3rogue.xyz//"/>
-  <updated>2016-12-22T11:32:48.425Z</updated>
+  <updated>2016-12-23T12:21:09.241Z</updated>
   <id>https://3rogue.xyz//</id>
   
   <author>
@@ -20,8 +20,8 @@
     <link href="https://3rogue.xyz/2016/12/20/Hexo2https/"/>
     <id>https://3rogue.xyz/2016/12/20/Hexo2https/</id>
     <published>2016-12-19T16:00:00.000Z</published>
-    <updated>2016-12-22T11:32:48.425Z</updated>
-    <content type="html"><![CDATA[<p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的。</p>
+    <updated>2016-12-23T12:21:09.241Z</updated>
+    <content type="html"><![CDATA[<p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的，需要的直接在 pages面板开启即可。</p>
 <p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net" target="_blank" rel="external">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a> 的免费套餐。</p>
 <a id="more"></a>
 <p>注册后都是很简单的操作，扫描后把域名的 DNS 改为 CloudFlare 所提供的地址。如果扫描里没显示结果的话，自己手动加 CNAME 解析即可。稍等十几分钟后 Recheck ， Status: Active 就表示成功了。</p>
@@ -36,7 +36,7 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的。</p>
+    <![CDATA[<p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的，需要的直接在 pages面板开启即可。</p>
 <p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com">CloudFlare</a> 的免费套餐。</p>]]>
     
     </summary>
@@ -139,19 +139,19 @@
   </entry>
   
   <entry>
-    <title><![CDATA[javfee简单爬虫]]></title>
-    <link href="https://3rogue.xyz/2015/08/09/javfee/"/>
-    <id>https://3rogue.xyz/2015/08/09/javfee/</id>
+    <title><![CDATA[avmo简单爬虫]]></title>
+    <link href="https://3rogue.xyz/2015/08/09/avmo/"/>
+    <id>https://3rogue.xyz/2015/08/09/avmo/</id>
     <published>2015-08-08T16:00:00.000Z</published>
-    <updated>2016-12-13T09:16:40.755Z</updated>
+    <updated>2016-12-27T08:37:16.238Z</updated>
     <content type="html"><![CDATA[<blockquote>
-<p>主要用到<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#" target="_blank" rel="external">requests包</a>，非常的方便。<br>爬 javfee 虽然 low 了点，不过站点很友好，不用特意设置 headers。</p>
+<p>主要练习<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#" target="_blank" rel="external">requests包</a>，非常的方便。<br>爬 avmo 虽然 low 了点，不过站点很友好。</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="单线程">单线程</h2><p>最坑的就是写文件名时候的编码问题，头疼的厉害，是时候去转 python3 了。</p>
 <script src="https://gist.github.com/3rogue/59e87c09c6779699f61b.js"></script>
 
-<h2 id="多线程">多线程</h2><p>多线程还不是很懂，写的很勉强，不过io密集型多线程优势非常的明显。比上面节省成吨的时间。</p>
+<h2 id="多线程">多线程</h2><p>多线程需要自己斟酌池子大小，太大的话开销更多所以有时候不会变快的。不过io密集型多线程优势非常的明显。比上面节省成吨的时间，如果你爬取的页面多的话。</p>
 <script src="https://gist.github.com/3rogue/f86157e01b5fc0aee4e0.js"></script>
 
 <h3 id="参考资料：">参考资料：</h3><ul>
@@ -162,7 +162,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
-<p>主要用到<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#">requests包</a>，非常的方便。<br>爬 javfee 虽然 low 了点，不过站点很友好，不用特意设置 headers。</p>
+<p>主要练习<a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#">requests包</a>，非常的方便。<br>爬 avmo 虽然 low 了点，不过站点很友好。</p>
 </blockquote>]]>
     
     </summary>

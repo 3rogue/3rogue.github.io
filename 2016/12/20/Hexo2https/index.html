@@ -69,7 +69,7 @@
     </header>
     <div class="entry">
       
-        <p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的。</p>
+        <p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的，需要的直接在 pages面板开启即可。</p>
 <p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net" target="_blank" rel="external">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a> 的免费套餐。</p>
 <a id="more"></a>
 <p>注册后都是很简单的操作，扫描后把域名的 DNS 改为 CloudFlare 所提供的地址。如果扫描里没显示结果的话，自己手动加 CNAME 解析即可。稍等十几分钟后 Recheck ， Status: Active 就表示成功了。</p>
