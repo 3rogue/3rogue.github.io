@@ -60,6 +60,80 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-12-28T16:00:00.000Z"><a href="/2016/12/29/filesize/">2016-12-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/29/filesize/">硬盘文件大小排序</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">def list_size(path):</span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    for dirpath, dirnames, filenames in os.walk(path):</span><br><span class="line">        for name in filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            if size&gt;0:</span><br><span class="line">                res[fullpath] = round(size/1024/1024)</span><br><span class="line">    return sorted(res.items(), key = lambda d:d[1], reverse = True)</span><br><span class="line"></span><br><span class="line">path = 'E:'</span><br><span class="line">with open(os.path.join(r'.\','1.txt'),'w') as f:</span><br><span class="line">    for i in list_size(path):</span><br><span class="line">        f.write(i[0]+'\t'+str(i[1])+'MB'+'\n')</span><br></pre></td></tr></table></figure>
+<p>os.listdir 只能看当前目录的文件，子文件夹的就不管了，所以就需要 os.walk 的遍历了。虽然小，不过还是挺实用的程序。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-28T16:00:00.000Z"><a href="/2016/12/29/mydouban/">2016-12-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/29/mydouban/">导出我的豆瓣电影列表</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>这个看上去好像是个奇怪的需求，但我个人还是挺需要的。有时候我想找的其实只是自己看过的列表，而豆瓣的搜索就算我给了关键词我标记过的电影排序并不会在前面。一开始也没有在意，在小众看到有人提供了<a href="http://www.appinn.com/douban-exporter-online/">网页服务</a> ，除了因为豆瓣的 api 有点慢，其他基本能满足需求了。</p>
+<p>最近刚好有兴趣，想着自己折腾下直接网页爬的话也更快些，而且自己可以定制自己要的，顺便熟悉下一些包的使用。</p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2016/12/29/mydouban/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-12-19T16:00:00.000Z"><a href="/2016/12/20/Hexo2https/">2016-12-20</a></time>
       
       
@@ -347,7 +421,7 @@
   
     <li><a href="/categories/life/">life</a><small>1</small></li>
   
-    <li><a href="/categories/python/">python</a><small>2</small></li>
+    <li><a href="/categories/python/">python</a><small>4</small></li>
   
     <li><a href="/categories/sth/">sth</a><small>1</small></li>
   
@@ -370,11 +444,15 @@
   
     <li><a href="/tags/acg/">acg</a><small>1</small></li>
   
+    <li><a href="/tags/douban/">douban</a><small>1</small></li>
+  
     <li><a href="/tags/https/">https</a><small>1</small></li>
   
     <li><a href="/tags/image/">image</a><small>1</small></li>
   
-    <li><a href="/tags/爬虫/">爬虫</a><small>1</small></li>
+    <li><a href="/tags/杂物间/">杂物间</a><small>1</small></li>
+  
+    <li><a href="/tags/爬虫/">爬虫</a><small>2</small></li>
   
   </ul>
 </div>
@@ -384,7 +462,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Pushbullet/" style="font-size: 10px;">Pushbullet</a> <a href="/tags/Telegram/" style="font-size: 10px;">Telegram</a> <a href="/tags/acg/" style="font-size: 10px;">acg</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a>
+    <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Pushbullet/" style="font-size: 10px;">Pushbullet</a> <a href="/tags/Telegram/" style="font-size: 10px;">Telegram</a> <a href="/tags/acg/" style="font-size: 10px;">acg</a> <a href="/tags/douban/" style="font-size: 10px;">douban</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/杂物间/" style="font-size: 10px;">杂物间</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
   </div>
 </div>
 

@@ -9,7 +9,7 @@
 </script>
   <meta charset="utf-8">
   
-  <title>acg | Yeoman</title>
+  <title>硬盘文件大小排序 | Yeoman</title>
   <meta name="author" content="Yeoman">
   
   <meta name="description" content="python web acg">
@@ -17,7 +17,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="硬盘文件大小排序"/>
   <meta property="og:site_name" content="Yeoman"/>
 
   
@@ -53,25 +53,81 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">acg</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-28T16:00:00.000Z"><a href="/2016/12/29/filesize/">2016-12-29</a></time>
+      
+      
+  
+    <h1 class="title">硬盘文件大小排序</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">def list_size(path):</span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    for dirpath, dirnames, filenames in os.walk(path):</span><br><span class="line">        for name in filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            if size&gt;0:</span><br><span class="line">                res[fullpath] = round(size/1024/1024)</span><br><span class="line">    return sorted(res.items(), key = lambda d:d[1], reverse = True)</span><br><span class="line"></span><br><span class="line">path = 'E:'</span><br><span class="line">with open(os.path.join(r'.\','1.txt'),'w') as f:</span><br><span class="line">    for i in list_size(path):</span><br><span class="line">        f.write(i[0]+'\t'+str(i[1])+'MB'+'\n')</span><br></pre></td></tr></table></figure>
+<p>os.listdir 只能看当前目录的文件，子文件夹的就不管了，所以就需要 os.walk 的遍历了。虽然小，不过还是挺实用的程序。</p>
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-06-20T16:00:00.000Z"><a href="/2016/06/21/test-images/">2016-06-21</a></time>
-            
-              <h1 class="title"><a href="/2016/06/21/test-images/">图像测试</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/python/">python</a>
   </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/杂物间/">杂物间</a>
+  </div>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2016/12/29/mydouban/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"  data-thread-key="2016/12/29/filesize/" data-title="硬盘文件大小排序" data-url="https://3rogue.xyz/2016/12/29/filesize/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"3rogue"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+
+
+</section>
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
