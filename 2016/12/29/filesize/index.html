@@ -70,7 +70,7 @@
     <div class="entry">
       
         <p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">def list_size(path):</span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    for dirpath, dirnames, filenames in os.walk(path):</span><br><span class="line">        for name in filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            if size&gt;0:</span><br><span class="line">                res[fullpath] = round(size/1024/1024)</span><br><span class="line">    return sorted(res.items(), key = lambda d:d[1], reverse = True)</span><br><span class="line"></span><br><span class="line">path = 'E:'</span><br><span class="line">with open(os.path.join(r'.\','1.txt'),'w') as f:</span><br><span class="line">    for i in list_size(path):</span><br><span class="line">        f.write(i[0]+'\t'+str(i[1])+'MB'+'\n')</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_size</span><span class="params">(path)</span>:</span></span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        <span class="keyword">for</span> name <span class="keyword">in</span> filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            <span class="keyword">if</span> size&gt;<span class="number">0</span>:</span><br><span class="line">                res[fullpath] = round(size/<span class="number">1024</span>/<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">return</span> sorted(res.items(), key = <span class="keyword">lambda</span> d:d[<span class="number">1</span>], reverse = <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">path = <span class="string">'E:'</span></span><br><span class="line"><span class="keyword">with</span> open(os.path.join(<span class="string">'E:'</span>, <span class="string">'filesize.txt'</span>),<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_size(path):</span><br><span class="line">        f.write(i[<span class="number">0</span>]+<span class="string">'\t'</span>+str(i[<span class="number">1</span>])+<span class="string">'MB'</span>+<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
 <p>os.listdir 只能看当前目录的文件，子文件夹的就不管了，所以就需要 os.walk 的遍历了。虽然小，不过还是挺实用的程序。</p>
 
       
@@ -99,8 +99,10 @@
 
  <nav id="pagination" >
     
+    <a href="/2016/12/29/mydouban/" class="alignleft prev" >上一页</a>
     
-    <a href="/2016/12/29/mydouban/" class="alignright next" >下一页</a>
+    
+    <a href="/2016/12/20/Hexo2https/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
@@ -206,7 +208,20 @@ var duoshuoQuery = {short_name:"3rogue"};
   <script src="//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
-
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>

@@ -109,7 +109,7 @@
 
  <nav id="pagination" >
     
-    <a href="/2016/12/29/mydouban/" class="alignleft prev" >上一页</a>
+    <a href="/2016/12/29/filesize/" class="alignleft prev" >上一页</a>
     
     
     <a href="/2016/12/08/Telegram2Pushbullet/" class="alignright next" >下一页</a>
@@ -218,7 +218,20 @@ var duoshuoQuery = {short_name:"3rogue"};
   <script src="//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
-
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
