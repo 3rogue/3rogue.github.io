@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>https://3rogue.xyz/2015/08/08/8queen/</loc>
+    <lastmod>2016-12-31T03:34:17.935Z</lastmod>
+    <data>
+        <display>
+        <title>八皇后问题学习 enumerate 和 permutations</title>
+        <pubTime>2015-08-07T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="python" url="https://3rogue.xyz/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://3rogue.xyz/2016/12/29/filesize/</loc>
     <lastmod>2016-12-30T04:10:17.234Z</lastmod>
     <data>
@@ -87,24 +105,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://3rogue.xyz/2015/08/08/8queen/</loc>
-    <lastmod>2016-12-20T13:42:45.192Z</lastmod>
-    <data>
-        <display>
-        <title>八皇后问题学习enumerate & permutations</title>
-        <pubTime>2015-08-07T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="python" url="https://3rogue.xyz/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://3rogue.xyz/2015/08/07/hello-world/</loc>

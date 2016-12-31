@@ -224,11 +224,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[八皇后问题学习enumerate & permutations]]></title>
+    <title><![CDATA[八皇后问题学习 enumerate 和 permutations]]></title>
     <link href="https://3rogue.xyz/2015/08/08/8queen/"/>
     <id>https://3rogue.xyz/2015/08/08/8queen/</id>
     <published>2015-08-07T16:00:00.000Z</published>
-    <updated>2016-12-20T13:42:45.192Z</updated>
+    <updated>2016-12-31T03:34:17.935Z</updated>
     <content type="html"><![CDATA[<p>permutations 生成123…9的全排列，共9!个<br>enumerate 提取横纵坐标<br><a id="more"></a></p>
 <script src="https://gist.github.com/3rogue/9806d55d97a72649e225.js"></script>
 ]]></content>
