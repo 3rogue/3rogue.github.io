@@ -1,12 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="canonical" href="https://3rogue.xyz" />
-  <script type="text/javascript">
-  var host = "3rogue.xyz";
-  if ((host == window.location.host) && (window.location.protocol != "https:"))
-    window.location.protocol = "https";
-</script>
   <meta charset="utf-8">
   
   <title>导出我的豆瓣电影列表 | Yeoman</title>
@@ -69,7 +63,7 @@
     </header>
     <div class="entry">
       
-        <p>这个看上去好像是个奇怪的需求，但我个人还是挺需要的。有时候我想找的其实只是自己看过的列表，而豆瓣的搜索就算我给了关键词我标记过的电影排序并不会在前面。一开始也没有在意，在小众看到有人提供了<a href="http://www.appinn.com/douban-exporter-online/" target="_blank" rel="external">网页服务</a>，除了因为豆瓣的 api 有点慢，其他基本能满足需求了。</p>
+        <p>这个看上去好像是个奇怪的需求，但我个人还是挺需要的。有时候我想找的其实只是自己看过的列表，而豆瓣的搜索就算我给了关键词我标记过的电影排序并不会在前面。一开始也没有在意，在小众看到有人提供了<a href="http://www.appinn.com/douban-exporter-online/" target="_blank" rel="external">网页服务</a>，除了速度有点慢的离谱，其他基本能满足需求了。</p>
 <p>最近刚好有兴趣，想着自己折腾下直接网页爬的话也更快些，而且自己可以定制自己要的，顺便熟悉下一些包的使用。</p>
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line"><span class="keyword">import</span> xlwings <span class="keyword">as</span> xw</span><br><span class="line"></span><br><span class="line">userid = <span class="string">'38278418'</span></span><br><span class="line">url = <span class="string">'https://movie.douban.com/people/&#123;&#125;/collect'</span>.format(userid)</span><br><span class="line"></span><br><span class="line">page = requests.get(url)</span><br><span class="line">d = pq(page.text)</span><br><span class="line">pagenum = int(d(<span class="string">'.paginator&gt;a:last'</span>).text())</span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(pagenum):</span><br><span class="line">    newurl = url + <span class="string">'?start=&#123;&#125;&amp;sort=time&amp;rating=all&amp;filter=all&amp;mode=grid'</span>.format(num*<span class="number">15</span>)</span><br><span class="line">    page = requests.get(newurl)</span><br><span class="line">    d = pq(page.text)</span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> d(<span class="string">'.grid-view .item'</span>).items():</span><br><span class="line">        detail = [each(<span class="string">'.title a'</span>).text(), each(<span class="string">'.title a'</span>).attr(<span class="string">'href'</span>), each(<span class="string">'.intro+li span:eq(0)'</span>).attr(<span class="string">'class'</span>)[<span class="number">6</span>], each(<span class="string">'.tags'</span>).text()[<span class="number">4</span>:], each(<span class="string">'.comment'</span>).text()]</span><br><span class="line">        res.append(detail)</span><br><span class="line">    <span class="comment"># if num == 1:</span></span><br><span class="line">    <span class="comment">#     break</span></span><br><span class="line"><span class="comment"># print(res)</span></span><br><span class="line"></span><br><span class="line">wb = xw.Book()</span><br><span class="line">xw.Range(<span class="string">'A1'</span>).value = [<span class="string">'片名'</span>, <span class="string">'评分'</span>, <span class="string">'标签'</span>, <span class="string">'短评'</span>]</span><br><span class="line">length = len(res)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">    xw.Range(<span class="string">'A&#123;&#125;'</span>.format(i+<span class="number">2</span>)).add_hyperlink(res[i][<span class="number">1</span>], text_to_display = res[i][<span class="number">0</span>])</span><br><span class="line">xw.Range(<span class="string">'B2:D&#123;&#125;'</span>.format(length+<span class="number">1</span>)).value = [i[<span class="number">2</span>:] <span class="keyword">for</span> i <span class="keyword">in</span> res]</span><br><span class="line"></span><br><span class="line">wb.save(<span class="string">'movie.xlsx'</span>)</span><br></pre></td></tr></table></figure>
@@ -204,7 +198,7 @@ var duoshuoQuery = {short_name:"3rogue"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2016 Yeoman
+  &copy; 2017 Yeoman
   
 </div>
 <div class="clearfix"></div></footer>
