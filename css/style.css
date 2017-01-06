@@ -106,6 +106,11 @@ a:hover {
 #banner {
   background: url("https://ws4.sinaimg.cn/large/6451fd63gw1fbh3fsdxmgj211y0c5tca.jpg") center #000;
 }
+@media screen and (max-width: 640px) {
+  #banner {
+    background: transparent;
+  }
+}
 #banner #header {
   text-shadow: 0 0 1px #fff;
   margin: 0 auto;
@@ -113,6 +118,11 @@ a:hover {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+@media screen and (max-width: 640px) {
+  #banner #header {
+    padding: 0;
+  }
 }
 #banner #header .blur1 {
   float: left;
@@ -136,6 +146,25 @@ a:hover {
   width: 283px;
   height: 37px;
 }
+@media screen and (max-width: 640px) {
+  #banner #header .blur2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  #banner #header #head-content {
+    display: none;
+  }
+}
+#banner #header #head-nav {
+  position: relative;
+}
+@media screen and (max-width: 640px) {
+  #banner #header #head-nav {
+    background-color: #333;
+    border: none;
+  }
+}
 #banner #header a {
   color: #fff;
 }
@@ -157,6 +186,8 @@ a:hover {
 #banner #header #main-nav {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
+  position: absolute;
+  right: 0;
 }
 #banner #header #main-nav ul {
   list-style: none;
@@ -166,15 +197,26 @@ a:hover {
   float: left;
   margin-left: 30px;
 }
+@media screen and (max-width: 640px) {
+  #banner #header #main-nav {
+    float: none;
+    text-align: center;
+    position: static;
+  }
+  #banner #header #main-nav a {
+    font-size: 0.8em;
+    color: #fff;
+  }
+  #banner #header #main-nav a:hover {
+    background-color: #333;
+    color: #aaa;
+  }
+}
 #banner #header .alignleft {
   position: absolute;
 }
 #banner #header .alignleft a {
   color: #444;
-}
-#banner #header .alignright {
-  position: absolute;
-  right: 0;
 }
 article {
   -webkit-box-shadow: 1px 1px 10px #aaa;
@@ -283,7 +325,7 @@ article header .icon {
   left: 20px;
   color: #258fb8;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   article header .icon {
     display: none;
   }
