@@ -49,9 +49,11 @@ a:hover {
 }
 .alignleft {
   float: left;
+  background-color: transparent;
 }
 .alignright {
   float: right;
+  background-color: transparent;
 }
 .clearfix {
   zoom: 1;
@@ -63,6 +65,9 @@ a:hover {
 }
 .clearfix:after {
   clear: both;
+}
+#content {
+  margin: 2em auto;
 }
 .inner {
   width: 1060px;
@@ -98,38 +103,78 @@ a:hover {
     margin-right: 0;
   }
 }
-#header {
+#banner {
+  background: url("https://ws4.sinaimg.cn/large/6451fd63gw1fbh3fsdxmgj211y0c5tca.jpg") center #000;
+}
+#banner #header {
   text-shadow: 0 0 1px #fff;
-  margin: 50px auto;
+  margin: 0 auto;
+  padding: 50px 0 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
-#header a {
-  color: #999;
+#banner #header .blur1 {
+  float: left;
+  background-color: #fefcfd;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  width: 140px;
+  height: 60px;
 }
-#header a:hover {
+#banner #header .blur2 {
+  float: right;
+  background-color: #344074;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  width: 283px;
+  height: 37px;
+}
+#banner #header a {
+  color: #fff;
+}
+#banner #header a:hover {
   color: #258fb8;
   text-decoration: none;
 }
-#header h1 {
+#banner #header h1 {
   font-weight: normal;
   font-size: 2.5em;
   line-height: 1;
 }
-#header h2 {
+#banner #header h2 {
   font-weight: normal;
   font-size: 0.9em;
   line-height: 1;
   margin-top: 10px;
 }
-#header #main-nav {
+#banner #header #main-nav {
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
-#header #main-nav ul {
+#banner #header #main-nav ul {
   list-style: none;
+  background-color: #fefcfd;
 }
-#header #main-nav ul li {
+#banner #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+}
+#banner #header .alignleft {
+  position: absolute;
+}
+#banner #header .alignleft a {
+  color: #444;
+}
+#banner #header .alignright {
+  position: absolute;
+  right: 0;
 }
 article {
   -webkit-box-shadow: 1px 1px 10px #aaa;
