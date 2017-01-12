@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://3rogue.xyz/2016/12/20/Hexo2https/</loc>
+    <lastmod>2017-01-08T13:12:56.427Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 升级 https</title>
+        <pubTime>2016-12-19T16:00:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>https</tag>
+         
+         
+           
+             
+              <breadCrumb title="blog" url="https://3rogue.xyz/categories/blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://3rogue.xyz/2015/08/09/avmo/</loc>
     <lastmod>2016-12-31T08:42:07.634Z</lastmod>
     <data>
@@ -77,28 +99,6 @@
            
              
               <breadCrumb title="python" url="https://3rogue.xyz/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://3rogue.xyz/2016/12/20/Hexo2https/</loc>
-    <lastmod>2016-12-23T12:21:09.241Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 升级 https</title>
-        <pubTime>2016-12-19T16:00:00.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>https</tag>
-         
-         
-           
-             
-              <breadCrumb title="blog" url="https://3rogue.xyz/categories/blog/"/>
           
         </display>
     </data>

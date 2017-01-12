@@ -7,6 +7,9 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+Disallow: /categories/
+Disallow: /tags/
+
 
 Sitemap: https://3rogue.xyz/sitemap.xml
 Sitemap: https://3rogue.xyz/baidusitemap.xml
