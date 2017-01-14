@@ -5,7 +5,7 @@
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://3rogue.xyz//"/>
-  <updated>2016-12-31T08:40:38.560Z</updated>
+  <updated>2017-01-14T08:39:32.043Z</updated>
   <id>https://3rogue.xyz//</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[网易云音乐歌词下载]]></title>
+    <link href="https://3rogue.xyz/2017/01/14/lyric/"/>
+    <id>https://3rogue.xyz/2017/01/14/lyric/</id>
+    <published>2017-01-13T16:00:00.000Z</published>
+    <updated>2017-01-14T08:39:32.043Z</updated>
+    <content type="html"><![CDATA[<p>之前一直用的脚本手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br><a id="more"></a></p>
+<p><img src="https://ooo.0o0.ooo/2017/01/14/5879e3ac09778.png" alt=""></p>
+<script src="https://gist.github.com/3rogue/5b03fbe499b2bfff91d1ef15a2583d55.js"></script>
+
+<p>默认下载的路径是 F:\CloudMusic\Lrc ，修改35行即可。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>之前一直用的脚本手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br>]]>
+    
+    </summary>
+    
+      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[导出我的豆瓣电影列表]]></title>
