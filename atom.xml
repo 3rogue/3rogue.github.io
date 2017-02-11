@@ -5,7 +5,7 @@
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://3rogue.xyz//"/>
-  <updated>2017-01-14T08:39:32.043Z</updated>
+  <updated>2017-01-15T01:33:20.116Z</updated>
   <id>https://3rogue.xyz//</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://3rogue.xyz/2017/01/14/lyric/"/>
     <id>https://3rogue.xyz/2017/01/14/lyric/</id>
     <published>2017-01-13T16:00:00.000Z</published>
-    <updated>2017-01-14T08:39:32.043Z</updated>
+    <updated>2017-01-15T01:33:20.116Z</updated>
     <content type="html"><![CDATA[<p>之前一直用的脚本手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br><a id="more"></a></p>
 <p><img src="https://ooo.0o0.ooo/2017/01/14/5879e3ac09778.png" alt=""></p>
 <script src="https://gist.github.com/3rogue/5b03fbe499b2bfff91d1ef15a2583d55.js"></script>
 
-<p>默认下载的路径是 F:\CloudMusic\Lrc ，修改35行即可。</p>
+<p>默认下载的路径是 F:\CloudMusic\Lrc ，自行修改即可。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>之前一直用的脚本手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br>]]>
@@ -267,7 +267,7 @@
     <link href="https://3rogue.xyz/2015/08/07/hello-world/"/>
     <id>https://3rogue.xyz/2015/08/07/hello-world/</id>
     <published>2015-08-06T16:00:00.000Z</published>
-    <updated>2016-12-20T05:12:04.604Z</updated>
+    <updated>2017-02-05T08:02:37.000Z</updated>
     <content type="html"><![CDATA[<p>利用# ## ###控制字体大小</p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><p>利用 &gt; 插入引用<br><a id="more"></a></p>
 <blockquote>

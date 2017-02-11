@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://3rogue.xyz/2015/08/07/hello-world/</loc>
+    <lastmod>2017-02-05T08:02:37.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3rogue.xyz/about/index.html</loc>
+    <lastmod>2017-02-03T05:06:42.928Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://3rogue.xyz/2017/01/14/lyric/</loc>
-    <lastmod>2017-01-14T08:39:32.043Z</lastmod>
+    <lastmod>2017-01-15T01:33:20.116Z</lastmod>
   </url>
   
   <url>
@@ -29,16 +39,6 @@
   <url>
     <loc>https://3rogue.xyz/2016/12/29/filesize/</loc>
     <lastmod>2016-12-30T04:10:17.234Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://3rogue.xyz/about/index.html</loc>
-    <lastmod>2016-12-20T13:56:29.744Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://3rogue.xyz/2015/08/07/hello-world/</loc>
-    <lastmod>2016-12-20T05:12:04.604Z</lastmod>
   </url>
   
   <url>
