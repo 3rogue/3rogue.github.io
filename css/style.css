@@ -104,7 +104,11 @@ a:hover {
   }
 }
 #banner {
-  background: url("https://ws4.sinaimg.cn/large/6451fd63gw1fbh3fsdxmgj211y0c5tca.jpg") center #000;
+  background: url("https://ws1.sinaimg.cn/large/6451fd63gy1fctoaugtk9j211y0c5gnm.jpg") center #000;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 @media screen and (max-width: 640px) {
   #banner {

@@ -25,6 +25,28 @@
 
     
   <url>
+    <loc>https://3rogue.xyz/2016/12/08/Telegram2Pushbullet/</loc>
+    <lastmod>2017-02-04T11:40:04.313Z</lastmod>
+    <data>
+        <display>
+        <title>尝试用 Telegram 来替代 Pushbullet</title>
+        <pubTime>2016-12-07T16:00:00.000Z</pubTime>
+        
+        <tag>Pushbullet</tag>
+         
+        <tag>Telegram</tag>
+         
+         
+           
+             
+              <breadCrumb title="sth" url="https://3rogue.xyz/categories/sth/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://3rogue.xyz/2017/01/14/lyric/</loc>
     <lastmod>2017-01-15T01:33:20.116Z</lastmod>
     <data>
@@ -160,28 +182,6 @@
            
              
               <breadCrumb title="acg" url="https://3rogue.xyz/categories/acg/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://3rogue.xyz/2016/12/08/Telegram2Pushbullet/</loc>
-    <lastmod>2016-12-17T11:55:00.065Z</lastmod>
-    <data>
-        <display>
-        <title>尝试用 Telegram 来替代 Pushbullet</title>
-        <pubTime>2016-12-07T16:00:00.000Z</pubTime>
-        
-        <tag>Pushbullet</tag>
-         
-        <tag>Telegram</tag>
-         
-         
-           
-             
-              <breadCrumb title="sth" url="https://3rogue.xyz/categories/sth/"/>
           
         </display>
     </data>
