@@ -5,7 +5,7 @@
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://3rogue.xyz//"/>
-  <updated>2017-01-15T01:33:20.116Z</updated>
+  <updated>2017-02-25T15:38:27.133Z</updated>
   <id>https://3rogue.xyz//</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[AQI 超标提醒]]></title>
+    <link href="https://3rogue.xyz/2017/02/25/aqi/"/>
+    <id>https://3rogue.xyz/2017/02/25/aqi/</id>
+    <published>2017-02-24T16:00:00.000Z</published>
+    <updated>2017-02-25T15:38:27.133Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p>
+</blockquote>
+<a id="more"></a>
+<p>那么我们需要做的就是：</p>
+<ol>
+<li>获取 AQI 数值的api</li>
+<li>制作 rss</li>
+<li>rss 更新就提醒自己</li>
+</ol>
+<p>功能 2 的启发来自于 <a href="https://binux.blog/2013/03/google-apps-script/" target="_blank" rel="external">binux</a> 关于 gas 的使用，让我们可以轻松实现rss的制作。顺便说下大大 github 的签到和爬虫框架都非常实用，不容错过。</p>
+<p>去 <a href="http://aqicn.org/api/" target="_blank" rel="external">http://aqicn.org/api/</a> 申请个令牌，查看 api 文档，我这里只用了一个简单的 get 命令就行了。gas 生成 rss，代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doGet</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> response = UrlFetchApp.fetch(<span class="string">"https://api.waqi.info/feed/changzhou/?token=你的token"</span>);</span><br><span class="line">   <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(response.getContentText());</span><br><span class="line">   <span class="keyword">var</span> feed = <span class="string">'&lt;?xml version="1.0" encoding="utf-8" ?&gt;'</span>+<span class="string">'&lt;rss version="2.0"&gt;'</span></span><br><span class="line">   +<span class="string">'&lt;channel&gt;'</span>+<span class="string">'&lt;title&gt;AQI常州超标数值&lt;/title&gt;'</span>+<span class="string">'&lt;link&gt;http://aqicn.org/here/&lt;/link&gt;'</span>;</span><br><span class="line">   Logger.log(data.data.aqi)</span><br><span class="line">   <span class="keyword">if</span> (data.data.aqi &gt; <span class="number">200</span>)&#123;</span><br><span class="line">     feed += <span class="string">'&lt;item&gt;'</span>+<span class="string">'&lt;title&gt;'</span>+<span class="string">'aqi '</span>+data.data.aqi+<span class="string">'&lt;/title&gt;'</span>+<span class="string">'&lt;link&gt;'</span>+data.data.city.url+<span class="string">'&lt;/link&gt;'</span>+<span class="string">'&lt;/item&gt;'</span>;</span><br><span class="line">     feed += <span class="string">'&lt;/channel&gt;&lt;/rss&gt;'</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ContentService.createTextOutput(feed).setMimeType(ContentService.MimeType.RSS);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里用的是常州做的测试，AQI&gt;200 的时候 rss 才更新，可以自行调整数值。</p>
+<h3 id="怎么提醒自己合适呢？">怎么提醒自己合适呢？</h3><p><a href="https://ifttt.com/" target="_blank" rel="external">ifttt</a> 满足你的一切需求，短信、邮件、Telegram，我相信这些已经足够让人满意了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[网易云音乐歌词下载]]></title>
@@ -31,6 +64,27 @@
     <![CDATA[<p>之前一直用的脚本手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br>]]>
     
     </summary>
+    
+      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[硬盘文件大小排序]]></title>
+    <link href="https://3rogue.xyz/2016/12/29/filesize/"/>
+    <id>https://3rogue.xyz/2016/12/29/filesize/</id>
+    <published>2016-12-28T16:00:00.000Z</published>
+    <updated>2016-12-30T04:10:17.234Z</updated>
+    <content type="html"><![CDATA[<p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_size</span><span class="params">(path)</span>:</span></span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        <span class="keyword">for</span> name <span class="keyword">in</span> filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            <span class="keyword">if</span> size&gt;<span class="number">0</span>:</span><br><span class="line">                res[fullpath] = round(size/<span class="number">1024</span>/<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">return</span> sorted(res.items(), key = <span class="keyword">lambda</span> d:d[<span class="number">1</span>], reverse = <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">path = <span class="string">'E:'</span></span><br><span class="line"><span class="keyword">with</span> open(os.path.join(<span class="string">'E:'</span>, <span class="string">'filesize.txt'</span>),<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_size(path):</span><br><span class="line">        f.write(i[<span class="number">0</span>]+<span class="string">'\t'</span>+str(i[<span class="number">1</span>])+<span class="string">'MB'</span>+<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>os.listdir 只能看当前目录的文件，子文件夹的就不管了，所以就需要 os.walk 的遍历了。虽然小，不过还是挺实用的程序。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br>]]>
+    </summary>
+    
+      <category term="杂物间" scheme="https://3rogue.xyz/tags/%E6%9D%82%E7%89%A9%E9%97%B4/"/>
     
       <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
     
@@ -60,27 +114,6 @@
       <category term="douban" scheme="https://3rogue.xyz/tags/douban/"/>
     
       <category term="爬虫" scheme="https://3rogue.xyz/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[硬盘文件大小排序]]></title>
-    <link href="https://3rogue.xyz/2016/12/29/filesize/"/>
-    <id>https://3rogue.xyz/2016/12/29/filesize/</id>
-    <published>2016-12-28T16:00:00.000Z</published>
-    <updated>2016-12-30T04:10:17.234Z</updated>
-    <content type="html"><![CDATA[<p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_size</span><span class="params">(path)</span>:</span></span><br><span class="line">    res=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        <span class="keyword">for</span> name <span class="keyword">in</span> filenames:</span><br><span class="line">            fullpath = os.path.join(dirpath, name)</span><br><span class="line">            size = round(os.path.getsize(fullpath))</span><br><span class="line">            <span class="keyword">if</span> size&gt;<span class="number">0</span>:</span><br><span class="line">                res[fullpath] = round(size/<span class="number">1024</span>/<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">return</span> sorted(res.items(), key = <span class="keyword">lambda</span> d:d[<span class="number">1</span>], reverse = <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">path = <span class="string">'E:'</span></span><br><span class="line"><span class="keyword">with</span> open(os.path.join(<span class="string">'E:'</span>, <span class="string">'filesize.txt'</span>),<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_size(path):</span><br><span class="line">        f.write(i[<span class="number">0</span>]+<span class="string">'\t'</span>+str(i[<span class="number">1</span>])+<span class="string">'MB'</span>+<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
-<p>os.listdir 只能看当前目录的文件，子文件夹的就不管了，所以就需要 os.walk 的遍历了。虽然小，不过还是挺实用的程序。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br>]]>
-    </summary>
-    
-      <category term="杂物间" scheme="https://3rogue.xyz/tags/%E6%9D%82%E7%89%A9%E9%97%B4/"/>
     
       <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
     
