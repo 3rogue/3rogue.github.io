@@ -38,7 +38,13 @@ h2 {
   font-size: 1.5em;
 }
 h3 {
-  font-size: 18px;
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5 {
+  font-size: 1em;
 }
 a {
   text-decoration: none;
@@ -222,6 +228,12 @@ a:hover {
 #banner #header .alignleft a {
   color: #444;
 }
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
 article {
   -webkit-box-shadow: 1px 1px 10px #aaa;
   box-shadow: 1px 1px 10px #aaa;
@@ -398,37 +410,6 @@ article .entry blockquote footer cite:before {
   color: #ccc;
   padding: 0 0.5em;
 }
-article .entry code,
-article .entry pre {
-  font-family: Consolas, Monaco, Menlo, monospace;
-}
-article .entry code {
-  background: #eee;
-  color: #666;
-  padding: 0 5px;
-  margin: 0 2px;
-  font-size: 0.9em;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-article .entry pre {
-  background: #eee;
-  border: 1px solid #ddd;
-  margin-top: 15px;
-  overflow: auto;
-  padding: 7px 15px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
-article .entry pre code {
-  background: none;
-  padding: 0;
-  margin: 0;
-  border: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
 article .entry ul,
 article .entry ol,
 article .entry dl {
@@ -475,7 +456,7 @@ article .entry video {
   max-height: 600px;
   -webkit-box-shadow: 2px 2px 3px #aaa;
   box-shadow: 2px 2px 3px #aaa;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   border: none;
 }

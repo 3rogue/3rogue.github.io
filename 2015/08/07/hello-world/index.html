@@ -21,6 +21,7 @@
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
   <link rel="alternate" href="/atom.xml" title="Yeoman" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/google-code-prettify/prettify.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 
@@ -96,9 +97,16 @@
 </ol>
 <p>用3个 ` 代码前后围绕，制造高亮，数字1左边，tab上方的按键</p>
 <p>紧跟Python等  选择好语言显示更佳</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'This is python'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">"iostream"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"This is cpp"</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Post name"</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Python">print(&#39;This is python&#39;)
+</code></pre>
+<pre><code class="cpp">#include &quot;iostream&quot;
+using namespace std;
+int main(){
+    cout&lt;&lt;&quot;This is cpp&quot;&lt;&lt;endl;
+}
+</code></pre>
+<pre><code class="bash">$ hexo new &quot;Post name&quot;
+</code></pre>
 <p>[xxx]环绕超链接文本 (xxx) 跟随填写链接地址</p>
 <p><a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <p>图片插入<br><img src="https://ooo.0o0.ooo/2016/12/20/5858849c0da8e.jpg" alt="小圆"></p>
@@ -208,22 +216,15 @@ var duoshuoQuery = {short_name:"3rogue"};
   
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/google-code-prettify/prettify.js"></script>
+<script src="//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+$(window).load(function(){
+ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   PR.prettyPrint();
+ });
 </script>
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
