@@ -5,7 +5,7 @@
   <subtitle><![CDATA[心有猛虎，细嗅蔷薇。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://3rogue.xyz//"/>
-  <updated>2017-02-25T15:38:27.133Z</updated>
+  <updated>2017-03-03T14:25:07.647Z</updated>
   <id>https://3rogue.xyz//</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[推送观影任务到奇妙清单]]></title>
+    <link href="https://3rogue.xyz/2017/03/03/film2wunderlist/"/>
+    <id>https://3rogue.xyz/2017/03/03/film2wunderlist/</id>
+    <published>2017-03-02T16:00:00.000Z</published>
+    <updated>2017-03-03T14:25:07.647Z</updated>
+    <content type="html"><![CDATA[<p>看了两个奥斯卡最佳真人短片感觉66的，想要每天都能记得看下短片。当然你可以说为什么不直接在奇妙清单里添加呢？因为我希望可以按照 <a href="https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&amp;type=23&amp;interval_id=100:90&amp;action=" target="_blank" rel="external">豆瓣榜单</a> 按顺序推送观影任务给我。</p>
+<p>需要做的工作：</p>
+<ol>
+<li><p>获取观影清单</p>
+</li>
+<li><p>推送到奇妙清单（可以邮件到 me@wunderlist.com 即可）</p>
+</li>
+<li><p>每天推送（windows设置计划任务）</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">'https://movie.douban.com/j/chart/top_list?type=23&amp;interval_id=100%3A90&amp;action=0&amp;start=0&amp;limit=149'</span>)</span><br><span class="line">film = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> r.json():</span><br><span class="line">	film[str(i[<span class="string">'rank'</span>])+<span class="string">' '</span>+i[<span class="string">'title'</span>]] = i[<span class="string">'url'</span>]</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'film.txt'</span>,<span class="string">'w'</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(json.dumps(film, ensure_ascii = <span class="keyword">False</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>还以为 python3 对编码没什么要求了，没想到 json.dumps 默认还是 ensure.ascii=True，这里需要注意下。</p>
+</blockquote>
+<p>这样本地就有了榜单里的150个短片，接下来我们发邮件推送到奇妙清单，<a href="https://support.wunderlist.com/customer/zh_cn/portal/articles/59709-%E9%80%9A%E8%BF%87%E7%94%B5%E9%82%AE%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1" target="_blank" rel="external">激活此功能</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">r'F:\pythonwork\spider\film.txt'</span>,<span class="string">'r+'</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    film = json.load(f)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> film:</span><br><span class="line">        first = <span class="string">'看光了去重新获取列表吧'</span></span><br><span class="line">        link = <span class="string">'https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&amp;type=23&amp;interval_id=100:90&amp;action='</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        first = list(film.keys())[<span class="number">0</span>]</span><br><span class="line">        link = film[first]</span><br><span class="line">    <span class="comment"># 发送邮件</span></span><br><span class="line">    from_addr = <span class="string">'发件邮箱'</span></span><br><span class="line">    password = <span class="string">'密码'</span></span><br><span class="line">    to_addr = <span class="string">'me@wunderlist.com'</span></span><br><span class="line">    smtp_server = <span class="string">'smtp.126.com'</span> <span class="comment">#smtp服务器地址</span></span><br><span class="line">    </span><br><span class="line">    msg = MIMEText(link,<span class="string">'plain'</span>,<span class="string">'utf-8'</span>)</span><br><span class="line">    subject = first</span><br><span class="line">    msg[<span class="string">'From'</span>] = Header(<span class="string">'&lt;&#123;&#125;&gt;'</span>.format(from_addr))</span><br><span class="line">    msg[<span class="string">'To'</span>] = Header(<span class="string">'&lt;&#123;&#125;&gt;'</span>.format(to_addr))</span><br><span class="line">    msg[<span class="string">'Subject'</span>] = Header(<span class="string">'今天'</span>+first, <span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    server = smtplib.SMTP_SSL(smtp_server, <span class="number">465</span>) </span><br><span class="line">    server.set_debuglevel(<span class="number">1</span>)</span><br><span class="line">    server.login(from_addr, password)</span><br><span class="line">    server.sendmail(from_addr, [to_addr], msg.as_string())</span><br><span class="line">    server.quit()</span><br><span class="line">    <span class="keyword">del</span> film[first]</span><br><span class="line">    f.seek(<span class="number">0</span>)</span><br><span class="line">    f.write(json.dumps(film, ensure_ascii = <span class="keyword">False</span>))</span><br><span class="line">    f.truncate()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Python 发邮件真是累，可以考虑试一试 <a href="https://github.com/kootenpv/yagmail" target="_blank" rel="external">yagmail</a> ，一直以为 ‘r+’就是读写模式，没想到还是追加的形式，如果不想 open 两次的话就得像结尾 3 行那么写了，有点难看呀。</p>
+</blockquote>
+<p>接下来就是定时运行脚本了，linux 相信会很容易，windows略<a href="http://blog.csdn.net/wwy11/article/details/51100432" target="_blank" rel="external">麻烦</a>了，不过也能用。</p>
+<p>测试时用 gmail 我也是脑抽了，不挂代理连不上的。用 qq 邮箱结果任务名都是乱码我的天，还是扔了许久的网易比较靠谱。</p>
+<p>有个小问题就是标题虽然给了’今天‘可以把任务设到今天提醒，不过奇妙清单没有自动去掉，反馈了下不知何时能解决。<img src="https://ws1.sinaimg.cn/large/6451fd63gy1fda02kosq1j20nd02laa8.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>看了两个奥斯卡最佳真人短片感觉66的，想要每天都能记得看下短片。当然你可以说为什么不直接在奇妙清单里添加呢？因为我希望可以按照 <a href="https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&a]]>
+    </summary>
+    
+      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[AQI 超标提醒]]></title>
