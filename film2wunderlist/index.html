@@ -1,0 +1,45 @@
+<!DOCTYPE HTML><html><head><meta charset="utf-8"><title>推送观影任务到奇妙清单 | Yeoman</title><meta name="author" content="Yeoman"><meta name="description" content="python web acg"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta property="og:title" content="推送观影任务到奇妙清单"><meta property="og:site_name" content="Yeoman"><meta property="og:image" content="undefined"><link href="/favicon.ico" rel="icon" type="image/x-ico"><link rel="alternate" href="/atom.xml" title="Yeoman" type="application/atom+xml"><link rel="stylesheet" href="/css/style.css" media="screen" type="text/css"><link rel="stylesheet" href="/google-code-prettify/prettify.css" type="text/css"><!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--></head></html><body><header id="banner"><div id="header" class="inner"><div id="head-content"><div class="blur1"></div><div class="alignleft"><h1><a href="/">Yeoman</a></h1><h2><a href="/">心有猛虎，细嗅蔷薇。</a></h2></div></div><div id="head-nav"><div class="blur2"></div><div id="main-nav"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li><li><a href="/atom.xml">RSS</a></li><li><a href="/about">About</a></li></ul><div class="clearfix"></div></div></div><div class="clearfix"></div></div></header><div id="content" class="inner"><div id="main-col" class="alignleft"><div id="wrapper"><article class="post"><div class="post-content"><header><div class="icon"></div><time datetime="2017-03-02T16:00:00.000Z"><a href="/film2wunderlist/">2017-03-03</a></time><h1 class="title">推送观影任务到奇妙清单</h1></header><div class="entry"><p>看了两个奥斯卡最佳真人短片感觉66的，想要每天都能记得看下短片。当然你可以说为什么不直接在奇妙清单里添加呢？因为我希望可以按照 <a href="https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&amp;type=23&amp;interval_id=100:90&amp;action=" target="_blank" rel="external">豆瓣榜单</a> 按顺序推送观影任务给我。<br><a id="more"></a><br>需要做的工作：</p><ol><li><p>获取观影清单</p></li><li><p>推送到奇妙清单（可以邮件到 me@wunderlist.com 即可）</p></li><li><p>每天推送（windows设置计划任务）</p></li></ol><pre><code class="Python">import requests
+import json
+
+r = requests.get(&#39;https://movie.douban.com/j/chart/top_list?type=23&amp;interval_id=100%3A90&amp;action=0&amp;start=0&amp;limit=149&#39;)
+film = {}
+for i in r.json():
+    film[str(i[&#39;rank&#39;])+&#39; &#39;+i[&#39;title&#39;]] = i[&#39;url&#39;]
+with open(&#39;film.txt&#39;,&#39;w&#39;,encoding = &#39;utf-8&#39;) as f:
+    f.write(json.dumps(film, ensure_ascii = False))
+</code></pre><blockquote><p>还以为 python3 对编码没什么要求了，没想到 json.dumps 默认还是 ensure.ascii=True，这里需要注意下。</p></blockquote><p>这样本地就有了榜单里的150个短片，接下来我们发邮件推送到奇妙清单，<a href="https://support.wunderlist.com/customer/zh_cn/portal/articles/59709-%E9%80%9A%E8%BF%87%E7%94%B5%E9%82%AE%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1" target="_blank" rel="external">激活此功能</a>。</p><pre><code class="python"># -*- coding: utf-8 -*-
+import json
+from email.mime.text import MIMEText
+from email.header import Header
+import smtplib
+
+with open(r&#39;F:\pythonwork\spider\film.txt&#39;,&#39;r+&#39;,encoding = &#39;utf-8&#39;) as f:
+    film = json.load(f)
+    if not film:
+        first = &#39;看光了去重新获取列表吧&#39;
+        link = &#39;https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&amp;type=23&amp;interval_id=100:90&amp;action=&#39;
+    else:
+        first = list(film.keys())[0]
+        link = film[first]
+    # 发送邮件
+    from_addr = &#39;发件邮箱&#39;
+    password = &#39;密码&#39;
+    to_addr = &#39;me@wunderlist.com&#39;
+    smtp_server = &#39;smtp.126.com&#39; #smtp服务器地址
+
+    msg = MIMEText(link,&#39;plain&#39;,&#39;utf-8&#39;)
+    subject = first
+    msg[&#39;From&#39;] = Header(&#39;&lt;{}&gt;&#39;.format(from_addr))
+    msg[&#39;To&#39;] = Header(&#39;&lt;{}&gt;&#39;.format(to_addr))
+    msg[&#39;Subject&#39;] = Header(&#39;今天&#39;+first, &#39;utf-8&#39;)
+
+    server = smtplib.SMTP_SSL(smtp_server, 465)
+    server.set_debuglevel(1)
+    server.login(from_addr, password)
+    server.sendmail(from_addr, [to_addr], msg.as_string())
+    server.quit()
+    del film[first]
+    f.seek(0)
+    f.write(json.dumps(film, ensure_ascii = False))
+    f.truncate()
+</code></pre><blockquote><p>Python 发邮件真是累，可以考虑试一试 <a href="https://github.com/kootenpv/yagmail" target="_blank" rel="external">yagmail</a> ，一直以为 ‘r+’就是读写模式，没想到还是追加的形式，如果不想 open 两次的话就得像结尾 3 行那么写了，有点难看呀。</p></blockquote><p>接下来就是定时运行脚本了，linux 相信会很容易，windows略<a href="http://blog.csdn.net/wwy11/article/details/51100432" target="_blank" rel="external">麻烦</a>了，不过也能用。</p><p>测试时用 gmail 我也是脑抽了，不挂代理连不上的。用 qq 邮箱结果任务名都是乱码我的天，还是扔了许久的网易比较靠谱。</p><p>有个小问题就是标题虽然给了’今天‘可以把任务设到今天提醒，不过奇妙清单没有自动去掉，反馈了下不知何时能解决。<img src="https://ws1.sinaimg.cn/large/6451fd63gy1fda02kosq1j20nd02laa8.jpg" alt=""></p></div><footer><div class="categories"><a href="/categories/python/">python</a></div><div class="clearfix"></div></footer></div></article><nav id="pagination"><a href="/aqi/" class="alignright next">下一页</a><div class="clearfix"></div></nav><section id="comment"><div class="ds-thread" data-thread-key="film2wunderlist/" data-title="推送观影任务到奇妙清单" data-url="https://3rogue.xyz/film2wunderlist/"></div><script type="text/javascript">var duoshuoQuery={short_name:"3rogue"};!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",t.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)}()</script></section></div></div><aside id="sidebar" class="alignright"><div class="search"><form action="//www.google.com/search" method="get" accept-charset="utf-8"><input type="search" name="q" results="0" placeholder="搜索"> <input type="hidden" name="q" value="site:3rogue.xyz"></form></div><div class="widget tag"><h3 class="title">分类</h3><ul class="entry"><li><a href="/categories/acg/">acg</a><small>1</small></li><li><a href="/categories/blog/">blog</a><small>2</small></li><li><a href="/categories/life/">life</a><small>1</small></li><li><a href="/categories/python/">python</a><small>7</small></li><li><a href="/categories/sth/">sth</a><small>1</small></li></ul></div><div class="widget tagcloud"><h3 class="title">标签云</h3><div class="entry"><a href="/tags/Hexo/" style="font-size:10px">Hexo</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/Pushbullet/" style="font-size:10px">Pushbullet</a> <a href="/tags/Telegram/" style="font-size:10px">Telegram</a> <a href="/tags/acg/" style="font-size:10px">acg</a> <a href="/tags/douban/" style="font-size:10px">douban</a> <a href="/tags/https/" style="font-size:10px">https</a> <a href="/tags/image/" style="font-size:10px">image</a> <a href="/tags/杂物间/" style="font-size:10px">杂物间</a> <a href="/tags/爬虫/" style="font-size:20px">爬虫</a></div></div></aside><div class="clearfix"></div></div><footer id="footer" class="inner"><div class="alignleft">&copy; 2017 Yeoman</div><div class="clearfix"></div></footer><script src="/google-code-prettify/prettify.js"></script><script src="//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script><script src="/js/jquery.imagesloaded.min.js"></script><script src="/js/gallery.js"></script><script>$(window).load(function(){$("pre").addClass("prettyprint linenums").attr("style","overflow:auto;"),PR.prettyPrint()})</script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script type="text/javascript">!function(n){n(".fancybox").fancybox()}(jQuery)</script></body>

@@ -17,8 +17,8 @@
   
   <entry>
     <title><![CDATA[推送观影任务到奇妙清单]]></title>
-    <link href="https://3rogue.xyz/2017/03/03/film2wunderlist/"/>
-    <id>https://3rogue.xyz/2017/03/03/film2wunderlist/</id>
+    <link href="https://3rogue.xyz/film2wunderlist/"/>
+    <id>https://3rogue.xyz/film2wunderlist/</id>
     <published>2017-03-02T16:00:00.000Z</published>
     <updated>2017-03-03T17:26:55.590Z</updated>
     <content type="html"><![CDATA[<p>看了两个奥斯卡最佳真人短片感觉66的，想要每天都能记得看下短片。当然你可以说为什么不直接在奇妙清单里添加呢？因为我希望可以按照 <a href="https://movie.douban.com/typerank?type_name=%E7%9F%AD%E7%89%87&amp;type=23&amp;interval_id=100:90&amp;action=" target="_blank" rel="external">豆瓣榜单</a> 按顺序推送观影任务给我。<br><a id="more"></a><br>需要做的工作：</p><ol><li><p>获取观影清单</p></li><li><p>推送到奇妙清单（可以邮件到 me@wunderlist.com 即可）</p></li><li><p>每天推送（windows设置计划任务）</p></li></ol><pre><code class="Python">import requests
@@ -77,8 +77,8 @@ with open(r&#39;F:\pythonwork\spider\film.txt&#39;,&#39;r+&#39;,encoding = &#39;
   
   <entry>
     <title><![CDATA[AQI 超标提醒]]></title>
-    <link href="https://3rogue.xyz/2017/02/25/aqi/"/>
-    <id>https://3rogue.xyz/2017/02/25/aqi/</id>
+    <link href="https://3rogue.xyz/aqi/"/>
+    <id>https://3rogue.xyz/aqi/</id>
     <published>2017-02-24T16:00:00.000Z</published>
     <updated>2017-02-25T15:38:27.133Z</updated>
     <content type="html"><![CDATA[<blockquote><p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p></blockquote><a id="more"></a><p>那么我们需要做的就是：</p><ol><li>获取 AQI 数值的api</li><li>制作 rss</li><li>rss 更新就提醒自己</li></ol><p>功能 2 的启发来自于 <a href="https://binux.blog/2013/03/google-apps-script/" target="_blank" rel="external">binux</a> 关于 gas 的使用，让我们可以轻松实现rss的制作。顺便说下大大 github 的签到和爬虫框架都非常实用，不容错过。</p><p>去 <a href="http://aqicn.org/api/" target="_blank" rel="external">http://aqicn.org/api/</a> 申请个令牌，查看 api 文档，我这里只用了一个简单的 get 命令就行了。gas 生成 rss，代码如下</p><pre><code class="javascript">function doGet(request) {
@@ -105,8 +105,8 @@ with open(r&#39;F:\pythonwork\spider\film.txt&#39;,&#39;r+&#39;,encoding = &#39;
   
   <entry>
     <title><![CDATA[网易云音乐歌词下载]]></title>
-    <link href="https://3rogue.xyz/2017/01/14/lyric/"/>
-    <id>https://3rogue.xyz/2017/01/14/lyric/</id>
+    <link href="https://3rogue.xyz/lyric/"/>
+    <id>https://3rogue.xyz/lyric/</id>
     <published>2017-01-13T16:00:00.000Z</published>
     <updated>2017-02-28T11:48:41.761Z</updated>
     <content type="html"><![CDATA[<p>功能：拖曳<strong>单个</strong>文件到命令行，匹配下载网易云音乐的歌词（双语）。</p><p>需要批量的建议考虑下<a href="http://www.autolyric.com/zh-hans/home" target="_blank" rel="external">可道歌词</a>，虽然按积分算的，不过歌词质量很高。其实也是一款歌词显示插件，支持 Windows Media Player、AIMP3、iTunes、Foobar2000等。或者 <a href="http://pan.baidu.com/s/1c2qZWlE" target="_blank" rel="external">ZonyLyricTools</a>,更纯粹的歌词、封面下载。</p><p>之前一直用的<a href="https://gist.github.com/3rogue/23c7bc2f876070dc3e956441e3d55a01" target="_blank" rel="external">脚本</a>手动下载，要去网页输入歌名搜索然后下载，有点繁琐，全自动下载的工具我又不是很满意，所以自己写个半自动的吧XD。<br><a id="more"></a></p><p><img src="https://ooo.0o0.ooo/2017/01/14/5879e3ac09778.png" alt=""></p><script src="https://gist.github.com/3rogue/5b03fbe499b2bfff91d1ef15a2583d55.js"></script><p>默认下载的路径是 F:\CloudMusic\Lrc ，自行修改即可。</p>]]></content>
@@ -121,8 +121,8 @@ with open(r&#39;F:\pythonwork\spider\film.txt&#39;,&#39;r+&#39;,encoding = &#39;
   
   <entry>
     <title><![CDATA[硬盘文件大小排序]]></title>
-    <link href="https://3rogue.xyz/2016/12/29/filesize/"/>
-    <id>https://3rogue.xyz/2016/12/29/filesize/</id>
+    <link href="https://3rogue.xyz/filesize/"/>
+    <id>https://3rogue.xyz/filesize/</id>
     <published>2016-12-28T16:00:00.000Z</published>
     <updated>2016-12-30T04:10:17.234Z</updated>
     <content type="html"><![CDATA[<p>学的 os , os.path 模块对文件目录处理，顺便实战一下。</p><pre><code class="python">import os
@@ -158,8 +158,8 @@ def list_size(path):
   
   <entry>
     <title><![CDATA[导出我的豆瓣电影列表]]></title>
-    <link href="https://3rogue.xyz/2016/12/29/mydouban/"/>
-    <id>https://3rogue.xyz/2016/12/29/mydouban/</id>
+    <link href="https://3rogue.xyz/mydouban/"/>
+    <id>https://3rogue.xyz/mydouban/</id>
     <published>2016-12-28T16:00:00.000Z</published>
     <updated>2016-12-31T08:40:38.560Z</updated>
     <content type="html"><![CDATA[<p>这个看上去好像是个奇怪的需求，但我个人还是挺需要的。有时候我想找的其实只是自己看过的列表，而豆瓣的搜索就算我给了关键词我标记过的电影排序并不会在前面。一开始也没有在意，在小众看到有人提供了<a href="http://www.appinn.com/douban-exporter-online/" target="_blank" rel="external">网页服务</a>，除了速度有点慢的离谱，其他基本能满足需求了。</p><p>最近刚好有兴趣，想着自己折腾下直接网页爬的话也更快些，而且自己可以定制自己要的，顺便熟悉下一些包的使用。</p><a id="more"></a><pre><code class="python"># -*- coding: utf-8 -*-
@@ -228,8 +228,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[Hexo 升级 https]]></title>
-    <link href="https://3rogue.xyz/2016/12/20/Hexo2https/"/>
-    <id>https://3rogue.xyz/2016/12/20/Hexo2https/</id>
+    <link href="https://3rogue.xyz/Hexo2https/"/>
+    <id>https://3rogue.xyz/Hexo2https/</id>
     <published>2016-12-19T16:00:00.000Z</published>
     <updated>2017-01-08T13:12:56.427Z</updated>
     <content type="html"><![CDATA[<p><strong>2016-12-22更新</strong> 今天 <a href="https://coding.net" target="_blank" rel="external">coding</a> 邮件通知 pages 服务可以开启 SSL/TLS 证书了，<del>当然是 Let’s encrypt 的免费证书</del>。所以本文其实对于 coding 用户更麻烦了，而且下文中的 CloudFlare 是国外服务，解析时间还是没有优势的，需要的直接在 pages 面板开启即可。</p><p>https 大势所趋，我也尝尝鲜。不过全站 https 就不能用七牛的免费流量了，所以图床或者静态文件什么的就不能放了。现在图床用的 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms/</a> ，博客托管在了 <a href="https://coding.net" target="_blank" rel="external">coding</a> ，SSL 就用 <a href="https://www.cloudflare.com" target="_blank" rel="external">CloudFlare</a> 的免费套餐。</p><a id="more"></a><p>注册后都是很简单的操作，扫描后把域名的 DNS 改为 CloudFlare 所提供的地址。如果扫描里没显示结果的话，自己手动加 CNAME 解析即可。稍等十几分钟后 Recheck ， Status: Active 就表示成功了。</p><p>在 crypto 分类里打开 HSTS 和 之后的 <em>include subdomains</em> 以及 <em>No-sniff</em> 选项。</p><p>记得修改 _config.yml 文件里的 url 为 https ，为了保证始终 https 连接，可以在主题的 head 标签下加入强制跳转：</p><pre><code class="javascript">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= config.url %&gt;&quot; /&gt;
@@ -254,8 +254,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[尝试用 Telegram 来替代 Pushbullet]]></title>
-    <link href="https://3rogue.xyz/2016/12/08/Telegram2Pushbullet/"/>
-    <id>https://3rogue.xyz/2016/12/08/Telegram2Pushbullet/</id>
+    <link href="https://3rogue.xyz/Telegram2Pushbullet/"/>
+    <id>https://3rogue.xyz/Telegram2Pushbullet/</id>
     <published>2016-12-07T16:00:00.000Z</published>
     <updated>2017-02-04T11:40:04.313Z</updated>
     <content type="html"><![CDATA[<p>Telegram 慕名已久，不过国内微信独大，作为一个聊天工具的话没有人用就是最大的尴尬了。不过，现在你可以把它当作 Pushbllet 的替代品留在你的手机中了。</p><a id="more"></a><h2 id="连接手机和电脑的_Pushbullet">连接手机和电脑的 Pushbullet</h2><p>给不熟悉 <a href="https://play.google.com/store/apps/details?id=com.pushbullet.android&amp;referrer=utm_source%3Dpushbullet.com" target="_blank" rel="external">Pushbullet</a> 的人简单介绍下它的功能：</p><ul><li>手机和电脑互传网页（手机到电脑甚至是自动打开标签）、图片。当然小文件也可以考虑，但毕竟是通过亚马逊云服务中转的，所以大文件更推荐使用usb连接或者其他局域网传输工具。</li><li>电脑管理和回复短信。这里的短信支持了许多第三方：WhatsApp, Telegram, Hangouts, Facebook Messenger, Allo and Line 然而微信是不可能的orz。</li><li>电脑查看、管理手机的通知栏信息。现在你不用打开你的手机，也不会错过任何消息了。</li><li>剪贴板同步。电脑、手机任意一端的剪贴板即可覆盖到另一端，相当实用的功能，然而 pro 版才有。</li><li>IFTTT 支持。瞬间多了无数种用法，任何你想要第一时间获取的信息利用 IFTTT 都可以实现。明天下雨了、rss 更新了、twitter 更新了，你都不会错过。</li></ul><p>不得不说 Pushbullet 非常的优秀，为什么要找替代品呢？ Pushbullet 之前免费，然而之后出现的 pro 版收费是39.99美元一年，不得不说还是略贵的。当然大部分功能仍然是免费的，<a href="https://www.pushbullet.com/pro" target="_blank" rel="external">收费</a> 的项目值得介意的就是剪贴板同步和通知栏管理（查看依旧可以）功能了。可是今年 Pushbullet 一整年都没有什么实质性更新，团队也很小，感受不到推出 pro 后的诚意。加上推送使用的 gcm 服务国内实在不稳定，电脑到手机的信息总是要打开 app 才行。</p><h2 id="支持_IFTTT_的_Telegram">支持 IFTTT 的 Telegram</h2><p><a href="https://telegram.org/" target="_blank" rel="external">Telegram</a> 最近支持 IFTTT 了，玩法立刻变得丰富多彩了。不再局限于一个聊天工具，我想这就是开放的好处吧。</p><p>所以说 Pushbullet 利用 IFTTT 能做的任何事，Telegram 也可以。同时利用 <a href="https://chrome.google.com/webstore/detail/ckkfnchnfmgpiejgaacmbngkcjbaaipd?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Chrome插件</a> 我们也连接了手机和电脑端。</p><p>然而不得不说的是还是有一定的局限性的：</p><ul><li>手机发送到电脑端的网页并不是自动打开的，插件实现更多的还是单向的电脑到手机，仍然需要打开 Telegram 的 <a href="https://desktop.telegram.org/" target="_blank" rel="external">pc版</a>、<a href="https://web.telegram.org/" target="_blank" rel="external">网页版</a>、或者 <a href="https://chrome.google.com/webstore/detail/telegram/clhhggbfdinjmjhajaheehoeibfljjno?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Chrome应用</a>，当然并不是很麻烦。</li><li>仅实现了 Pushbullet 的功能1和5。</li></ul><p>对我个人来说，短信实在用的不多，查看和管理通知栏确实很有用，然而手机一般都习惯性放在办公桌面上了。所以我更在乎的是功能的稳定性，在 Telegram 上我看到了更多可能，毕竟有开源社区的力量是无限的。</p><p>其实连接手机和 pc 最合适的还是苹果，毕竟都是自家的操作系统连接方便。Windows 手机基本算是失败了，不过借助 Chrome 浏览器连接安卓也不是那么难堪。</p><p>最后给个福利，在 Telegram 利用 IFTTT 建了个09优酷视频的 <a href="https://telegram.me/ftd_2009" target="_blank" rel="external">channel</a>,欢迎关注。</p>]]></content>
@@ -274,8 +274,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[图像测试]]></title>
-    <link href="https://3rogue.xyz/2016/06/21/test-images/"/>
-    <id>https://3rogue.xyz/2016/06/21/test-images/</id>
+    <link href="https://3rogue.xyz/test-images/"/>
+    <id>https://3rogue.xyz/test-images/</id>
     <published>2016-06-20T16:00:00.000Z</published>
     <updated>2016-12-20T01:13:26.590Z</updated>
     <content type="html"><![CDATA[<p>试一试图片效果<br><a id="more"></a><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849c3d558.jpg" alt="hui3"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849e68665.jpg" alt="hui1"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849f1aaaf.png" alt="hui4"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849fa2217.png" alt="hui2"><br><img src="https://ooo.0o0.ooo/2016/12/20/5858849ff36b6.jpg" alt="hui5"></p>]]></content>
@@ -294,8 +294,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[换卡后的二三事]]></title>
-    <link href="https://3rogue.xyz/2015/10/02/after-change-sim/"/>
-    <id>https://3rogue.xyz/2015/10/02/after-change-sim/</id>
+    <link href="https://3rogue.xyz/after-change-sim/"/>
+    <id>https://3rogue.xyz/after-change-sim/</id>
     <published>2015-10-01T16:00:00.000Z</published>
     <updated>2016-12-10T13:19:26.809Z</updated>
     <content type="html"><![CDATA[<p>换了手机号，第一时间就想起一堆账号好像手机号码绑定的，赶紧更换手机：</p><ol><li><a href="http://accounts.alipay.com" target="_blank" rel="external">淘宝安全中心</a><br><a href="https://security.google.com/settings/security/signinoptions/rescuephone?utm_source=OGB/" target="_blank" rel="external">google</a> 方便<br><a href="http://aq.qq.com/" target="_blank" rel="external">腾讯</a> 腾讯真TM蛋疼，不记得密保问题只能人工申诉了，过程繁琐，页面许久没更新过的样子。<br><a href="https://passport.baidu.com/v2/accountsecurity?act=rebindmobile" target="_blank" rel="external">百度</a></li><li>各大网银（可能需要去网点办理）</li><li><a href="http://security.weibo.com/security/index" target="_blank" rel="external">微博</a><a id="more"></a></li><li>各大网上商城：京东（需要电话400-606-5500转7沟通）等，400电话收市话费的orz</li></ol>]]></content>
@@ -310,8 +310,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[avmo 简单爬虫]]></title>
-    <link href="https://3rogue.xyz/2015/08/09/avmo/"/>
-    <id>https://3rogue.xyz/2015/08/09/avmo/</id>
+    <link href="https://3rogue.xyz/avmo/"/>
+    <id>https://3rogue.xyz/avmo/</id>
     <published>2015-08-08T16:00:00.000Z</published>
     <updated>2016-12-31T08:42:07.634Z</updated>
     <content type="html"><![CDATA[<blockquote><p>主要练习 <a href="http://requests-docs-cn.readthedocs.org/zh_CN/latest/index.html#" target="_blank" rel="external">requests</a> ，非常的方便。<br>爬 avmo 虽然 low 了点，不过站点很友好。</p></blockquote><a id="more"></a><h2 id="单线程">单线程</h2><p>已转python3，编码不是问题了。</p><script src="https://gist.github.com/3rogue/59e87c09c6779699f61b.js"></script><h2 id="多线程">多线程</h2><p>多线程需要自己斟酌池子大小，太大的话开销更多所以有时候不会变快的。不过io密集型多线程优势非常的明显。比上面节省成吨的时间，如果你爬取的页面多的话。</p><script src="https://gist.github.com/3rogue/f86157e01b5fc0aee4e0.js"></script><h3 id="参考资料：">参考资料：</h3><ul><li><strong><a href="http://segmentfault.com/a/1190000000414339#articleHeader3" target="_blank" rel="external">一行 Python 实现并行化</a></strong></li><li><a href="http://www.oschina.net/code/snippet_2359276_50088#73034" target="_blank" rel="external">Python抓妹子图+多进程</a></li><li><a href="http://yangpengg.github.io/blog/2012/12/13/decode-and-encode-in-python/" target="_blank" rel="external">Decode and Encode in Python</a></li></ul>]]></content>
@@ -328,8 +328,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[八皇后问题学习 enumerate 和 permutations]]></title>
-    <link href="https://3rogue.xyz/2015/08/08/8queen/"/>
-    <id>https://3rogue.xyz/2015/08/08/8queen/</id>
+    <link href="https://3rogue.xyz/8queen/"/>
+    <id>https://3rogue.xyz/8queen/</id>
     <published>2015-08-07T16:00:00.000Z</published>
     <updated>2016-12-31T03:34:17.935Z</updated>
     <content type="html"><![CDATA[<p>permutations 生成123…9的全排列，共9!个<br>enumerate 提取横纵坐标<br><a id="more"></a></p><script src="https://gist.github.com/3rogue/9806d55d97a72649e225.js"></script>]]></content>
@@ -344,8 +344,8 @@ class Handler(BaseHandler):
   
   <entry>
     <title><![CDATA[Markdown 入门基础]]></title>
-    <link href="https://3rogue.xyz/2015/08/07/hello-world/"/>
-    <id>https://3rogue.xyz/2015/08/07/hello-world/</id>
+    <link href="https://3rogue.xyz/hello-world/"/>
+    <id>https://3rogue.xyz/hello-world/</id>
     <published>2015-08-06T16:00:00.000Z</published>
     <updated>2017-02-05T08:02:37.000Z</updated>
     <content type="html"><![CDATA[<p>利用# ## ###控制字体大小</p><h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><p>利用 &gt; 插入引用<br><a id="more"></a></p><blockquote><p>这是一段引用文字</p></blockquote><p>*包裹文字 斜体</p><p><em>斜体</em></p><p>** 包裹粗体</p><p><strong>粗体</strong></p><p>~~ 包裹删除线</p><p><del>写错了</del></p><p>粗体中包含斜体/斜体中包含粗体，用 <em></em> 代替 * 包裹中间的文字即可</p><p><em>Everyone <strong>must</strong> attend the meeting at 5 o’clock today.</em></p><p>‘-‘ 或者 ‘*’制造列表</p><ul><li>列表1</li><li>列表2</li></ul><ol><li>有序列表1</li><li>有序列表2</li></ol><p>用3个 ` 代码前后围绕，制造高亮，数字1左边，tab上方的按键</p><p>紧跟Python等 选择好语言显示更佳</p><pre><code class="Python">print(&#39;This is python&#39;)
