@@ -80,26 +80,34 @@ with open(r&#39;F:\pythonwork\spider\film.txt&#39;,&#39;r+&#39;,encoding = &#39;
     <link href="https://3rogue.xyz/aqi/"/>
     <id>https://3rogue.xyz/aqi/</id>
     <published>2017-02-24T16:00:00.000Z</published>
-    <updated>2017-03-09T13:32:27.533Z</updated>
-    <content type="html"><![CDATA[<blockquote><p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p></blockquote><a id="more"></a><p>那么我们需要做的就是：</p><ol><li>获取 AQI 数值的 api</li><li>制作 rss</li><li>rss 更新就提醒自己</li></ol><p>功能 2 的启发来自于 <a href="https://binux.blog/2013/03/google-apps-script/" target="_blank" rel="external">binux</a> 关于 gas 的使用，让我们可以轻松实现 rss 的制作。顺便说下大大 github 的签到和爬虫框架都非常实用，不容错过。</p><p>去 <a href="http://aqicn.org/api/" target="_blank" rel="external">http://aqicn.org/api/</a> 申请个令牌，查看 api 文档，我这里只用了一个简单的 get 命令就行了。gas 生成 rss，代码如下</p><pre><code class="javascript">function doGet(request) {
+    <updated>2017-03-18T07:11:33.917Z</updated>
+    <content type="html"><![CDATA[<blockquote><p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p></blockquote><a id="more"></a><p>作为没有 vps 的人，没有24小时在线的服务器定时运行脚本，所以本地 python 就不做考虑了，但是我们有谷歌XD。</p><p>那么我们需要做的就是：</p><ol><li>获取 AQI 数值的 api</li><li>制作 rss</li><li>rss 更新就提醒自己</li></ol><p>功能 2 的启发来自于 <a href="https://binux.blog/2013/03/google-apps-script/" target="_blank" rel="external">binux</a> 关于 gas 的使用，让我们可以轻松实现 rss 的制作。顺便说下大大 github 的签到和爬虫框架都非常实用，不容错过。</p><p>去 <a href="http://aqicn.org/api/" target="_blank" rel="external">http://aqicn.org/api/</a> 申请个令牌，查看 api 文档，我这里只用了一个简单的 get 命令就行了。gas 生成 rss，代码如下</p><pre><code class="javascript">function doGet(request) {
    var response = UrlFetchApp.fetch(&quot;https://api.waqi.info/feed/changzhou/?token=你的token&quot;);
    var data = JSON.parse(response.getContentText());
    var feed = &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;&#39;+&#39;&lt;rss version=&quot;2.0&quot;&gt;&#39;
    +&#39;&lt;channel&gt;&#39;+&#39;&lt;title&gt;AQI常州超标数值&lt;/title&gt;&#39;+&#39;&lt;link&gt;http://aqicn.org/here/&lt;/link&gt;&#39;;
    Logger.log(data.data.aqi)
-   if (data.data.aqi &gt; 200){
+   if (data.data.aqi &gt; 150){
      feed += &#39;&lt;item&gt;&#39;+&#39;&lt;title&gt;&#39;+&#39;aqi &#39;+data.data.aqi+&#39;&lt;/title&gt;&#39;+&#39;&lt;link&gt;&#39;+data.data.city.url+&#39;&lt;/link&gt;&#39;+&#39;&lt;/item&gt;&#39;;
      feed += &#39;&lt;/channel&gt;&lt;/rss&gt;&#39;;
    }
    return ContentService.createTextOutput(feed).setMimeType(ContentService.MimeType.RSS);
 }
-</code></pre><p>这里用的是常州做的测试，AQI&gt;200 的时候 rss 才更新，可以自行调整数值。</p><h3 id="怎么提醒自己合适呢？">怎么提醒自己合适呢？</h3><p><a href="https://ifttt.com/" target="_blank" rel="external">IFTTT</a> 满足你的一切需求，短信、邮件、Telegram，我相信这些已经足够让人满意了。</p>]]></content>
+</code></pre><p>这里用的是常州做的测试，AQI&gt;150 的时候 rss 才更新，可以自行调整数值。</p><h3 id="怎么提醒自己合适呢？">怎么提醒自己合适呢？</h3><p><a href="https://ifttt.com/" target="_blank" rel="external">IFTTT</a> 满足你的一切需求，短信、邮件、Telegram，我相信这些已经足够让人满意了。</p><p>2017.03.18更新：最近发现有个 <a href="http://sc.ftqq.com/3.version" target="_blank" rel="external">微信推送</a> 很实用，所以就不用生成 rss 那么麻烦了，超标以后直接微信推送提醒自己。</p><pre><code class="javascript">function doGet(request) {
+   var response = UrlFetchApp.fetch(&quot;https://api.waqi.info/feed/changzhou/?token=你的token&quot;);
+   var data = JSON.parse(response.getContentText());
+   if (data.data.aqi &gt; 150){
+     UrlFetchApp.fetch(&quot;http://sc.ftqq.com/你的另一个token.send&quot;+&quot;?text=&quot;+encodeURI(&quot;今天空气超标:&quot;)+data.data.aqi+&quot;&amp;desp=&quot;+data.data.city.url);
+   }
+   Logger.log(data.data.aqi);
+}
+</code></pre>]]></content>
     <summary type="html">
     <![CDATA[<blockquote><p>现在空气成为大家关注的话题了，AQI 超标能够及时提醒自己的话还是很人性化的，许多天气 app 都可以实现这功能，我懒得再装个天气 app 了，虽然自带的也有 pm2.5 的数值，桌面小插件我也不记得每天都看下它，<del>真是懒到家了</del>还是通知提醒我比较靠谱。这就是本文的由来了。</p></blockquote>]]>
     
     </summary>
     
-      <category term="python" scheme="https://3rogue.xyz/categories/python/"/>
+      <category term="life" scheme="https://3rogue.xyz/categories/life/"/>
     
   </entry>
   
